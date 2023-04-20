@@ -1,0 +1,16 @@
+<h1>
+    Dear, ${pdict.emailAddress} <br>
+
+    <h1>you are subscribed product is available</h1>
+    <isloop items="${pdict.productArrayList}" var="ele" status="loopstatus">
+        <h1>${ele.productName} is Now Back<a href="${URLUtils.http('Product-Show', 'pid', ele.pid)}"> Shop here</a><br>
+        </h1>
+    </isloop>
+    <br>
+
+    <br>
+
+    Thanks,
+    RefArch Team.
+
+</h1>

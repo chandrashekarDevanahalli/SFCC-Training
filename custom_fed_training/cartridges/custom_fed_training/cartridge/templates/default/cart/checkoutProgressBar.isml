@@ -1,0 +1,19 @@
+<div class="checkou-progress-bar d-flex justify-content-center">
+    <div class="cart-status active">
+        <span class="d-flex align-items-center"><hr class="progress-bar-line end"><i class="fa fa-circle"></i> <hr class="progress-bar-line"></span>
+        <iscomment> <i class="fa fa-dot-circle-o"></i> </iscomment>
+        <span class="text">CART</span>
+    </div>
+    <div class="shipping-info">
+        <span class="d-flex align-items-center"><hr class="progress-bar-line"> <i class="fa fa-circle"></i> <hr class="progress-bar-line"></span>
+        <span class="text">SHIPPING INFO</span>
+    </div>
+    <div class="payment-info">
+        <span class="d-flex align-items-center"><hr class="progress-bar-line"><i class="fa fa-circle"></i> <hr class="progress-bar-line"></span>
+        <span class="text">PAYMENT INFO</span>
+    </div>
+    <div class="checkout-review">
+        <span class="d-flex align-items-center"><hr class="progress-bar-line"><i class="fa fa-circle"></i> <hr class="progress-bar-line end"></span>
+        <span class="text">REVIEW & PLACE ORDER</span>
+    </div>
+</div>

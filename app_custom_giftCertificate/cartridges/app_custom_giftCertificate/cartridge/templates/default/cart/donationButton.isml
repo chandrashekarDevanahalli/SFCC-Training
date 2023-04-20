@@ -1,0 +1,10 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addJS('*/js/donationButton.js');
+    </isscript>
+
+<div class="donate-amount-button col-5">
+    <a href="${URLUtils.url('Donation-Result')}" class="btn btn-primary donate-amount-button">Donate
+        <strong class="donation-amount-value">${pdict.totals.roundoff.roundOffAmountWithCurrency}</strong>
+    </a>
+</div>

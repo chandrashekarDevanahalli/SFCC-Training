@@ -1,0 +1,17 @@
+<h1>
+    Dear, ${pdict.customerInfo.firstName}.${pdict.customerInfo.lastName} <br>
+
+    Now you are subscribed for RefArch email alerts from <br>
+    your country "${pdict.customerInfo.country}"for below categories.<br>
+
+    <isloop items="${pdict.customerInfo.categoryPreference}" var="ele">
+        ${ele}<br>
+    </isloop>
+    <br>
+
+    <br>
+
+    Thanks,
+    RefArch Team.
+
+</h1>

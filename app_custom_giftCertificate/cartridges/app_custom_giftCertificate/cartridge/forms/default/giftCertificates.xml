@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+    <field formid="couponCode" label="label.input.couponCode.payment" type="string" max-length="50"/>
+
+    <field formid="giftCertificate" label="label.input.giftCertificate.payment" type="string" max-length="50"/>
+
+</form>

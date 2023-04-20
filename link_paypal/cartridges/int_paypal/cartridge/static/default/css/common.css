@@ -1,0 +1,12 @@
+.flash-messages-container {
+    position: fixed;
+    width: 100%;
+    top: 1rem;
+    left: 0;
+    padding: 0 1rem 0 1rem;
+}
+
+.flash-messages-container > .alert {
+    width: fit-content;
+    margin: 0 auto 1rem auto;
+}

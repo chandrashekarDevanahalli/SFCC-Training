@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+</head>
+
+
+<body>
+    <header>
+        <div>
+            <span>
+                <a href="">
+                    <img src="https://www.lorealparis.co.in/-/media/project/loreal/brand-sites/oap/shared/baseline/navigationext/loreal-paris-black-logo.svg?rev=043a5893295a412fb46ec561cbd31147&la=en-IN&hash=3A918F695AE624EF3B9502BA9F37CEB91CBC97BA"
+                        alt="logo">
+                </a>
+            </span>
+        </div>
+
+        <nav>
+            <ul class="navigation-list">
+                <li>
+                    <a href="/skin-care">SKIN CARE</a>
+                </li>
+                <li>
+                    <a href="/hair-care">HAIR CARE</a>
+                </li>
+                <li>
+                    <a href="/Hair-color">HAIR COLOR</a>
+                </li>
+                <li>
+                    <a href="/makeup">MAKEUP</a>
+                </li>
+                <li>
+                    <a href="/virtual-try-on">VIRTUAL TRY ON</a>
+                </li>
+                <li>
+                    <a href="/skin-genius">SKIN GENIUS</a>
+                </li>
+                <li>
+                    <a href="/virtual-hair-colour-finder">HAIR DIAGNOSIS</a>
+                </li>
+                <li>
+                    <a href="/beauty-magazine">BEAUTY MAGAZINE</a>
+                </li>
+                <li>
+                    <a href="/le-defile-walk-your-worth">LE DÉFILÉ</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <span>
+            <a href="#">
+                <i class="fa fa-search" style="font-size:36px"></i>
+            </a>
+        </span>
+
+
+    </header>
+
+    <main>
+
+        <div class="hero-banner">
+            <img src="https://www.lorealparis.co.in/-/media/project/loreal/brand-sites/oap/apac/in/banners/makeup/makeup_face.jpg?rev=ce79ee251a5c4822afa0a267577d652f&cx=0.24&cy=0.41&cw=2000&ch=600&hash=DD22057F31B1FAE3740BA8FD359DF8A1C5625084"
+                alt="banner">
+        </div>
+
+        <article>
+            <div>
+                <h1>
+                    Liquid Foundation - Face - Makeup Products & Advice - L'Oréal Paris
+                </h1>
+            </div>
+
+            <div class="face">Whether you want a light coverage foundation for your no-makeup makeup days or prefer
+                something more full coverage, get ready to revolutionise your face makeup routine with the L’Oréal Paris
+                liquid foundations.<br><br>
+
+                Before learning how to use foundation, find a foundation that suits your skin’s needs and pick the right
+                foundation colour depending on your skin tone and undertone.<br><br>
+
+                <strong>L’Oréal Paris foundations for all skin types - </strong><br>
+                1. <a href="/face/infallible">Infallible 24H Matte Cover</a> – This L’Oréal Paris matte foundation
+                delivers a natural, second-skin finish and an ultra-resistant matte coverage with up to 24 hours shine
+                resistance<br>
+                2. Infallible 24H Matte Cover Fresh Wear - This L’Oréal Paris liquid foundation has a full coverage
+                satin finish that keeps your makeup looking fresh for up to 24 hours<br>
+                3. <a href="/face/true-match">True match Super Blendable Liquid Foundation</a> – Enriched with a
+                hydrating complex, this L’Oréal Paris foundation perfectly matches your undertone and gives you a
+                natural coverage<br><br>
+
+                <strong>How to use foundation?</strong><br>
+                Follow the steps below to achieve a flawless foundation coverage every time – <br><br>
+                1. Use a <a href="/face/face-primer">primer</a> all over your face to create a smooth and even base and
+                reduce texture<br>
+                2. Dot the L’Oréal Paris liquid foundation all over your face, focussing in the centre and moving
+                outwards<br>
+                3. Using a makeup sponge or foundation brush, start bouncing or tapping the foundation in to your skin
+                for a seamless coverage. Moving the brush or sponge around in a “painting” motion might give you a
+                streaky application<br>
+                4. Continue blending the foundation and add more if needed to achieve your desired level of
+                coverage<br><br>
+
+                Discover the L’Oréal Paris liquid foundation makeup range for a flawless, skin-like base that lasts
+                long. The diverse L’Oréal Paris foundation shades are specially created to flatter all different
+                complexion, making them one of the best foundations for Indian skin tones.
+            </div>
+        </article>
+
+        <div>
+            <div>
+                <span>
+                    3 result(s)
+                </span>
+            </div>
+            <div>
+                <select name="sort_select" id="sort">
+                    <option value="sort">SORT</option>
+                </select>
+            </div>
+            <button>
+                <span>
+                    SPECIFY MY NEEDS
+                    <a href="">
+                        <i class="fa fa-filter"></i>
+                    </a>
+                </span>
+            </button>
+        </div>
+
+        <div class="">
+            <ul style="list-style-type:none;">
+                <li>
+                    <button>
+                        <span>
+                            LIQUID FOUNDATION
+                        </span>
+                    </button>
+                </li>
+            </ul>
+            <button>
+                <span>
+                    CLEAR ALL
+                </span>
+            </button>
+        </div>
+
+        <div class="product-tile">
+            <p>Try it</p>
+            <div>
+                <header>
+                    <img src="https://www.lorealparis.co.in/-/media/project/loreal/brand-sites/oap/apac/in/local-products/makeup/face-makeup/6902395768791_packshot.png?rev=41713df91857476d992325a6ffef00d9?w=60&hash=88F8CCE31B9549CFFABF9DB807D80348A792662F 60w"
+                        alt="face-pack" width="140" height="300">
+                    <a href="">
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                    </a>
+                    <p>
+                        <a href="/infallible/24h-matte-cover-foundation-105-natural-beige">
+                            <span>
+                                Infallible
+                            </span>
+                            <span>
+                                Infallible 24H Matte Cover Foundation (105 Natural Beige)
+                            </span>
+                        </a>
+                    </p>
+                </header>
+                <footer>
+                    <a href="">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <span>0/5</span>
+                    </a>
+                    <span>
+                        <a href="">VIEW PRODUCT</a>
+                    </span>
+                </footer>
+            </div>
+            <p>Try it</p>
+            <div>
+                <header>
+                    <img src="https://www.lorealparis.co.in/-/media/project/loreal/brand-sites/oap/apac/in/local-products/makeup/face-makeup/3600523614516_packshot.png?rev=2b2ee24f72034390b91bcdb951244817?w=60&hash=DA09D6F7AAE48975A70E1E4AF90BD5E2956CC8D4 60w"
+                        alt="face-pack" width="140" height="300">
+                    <a href="">
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                    </a>
+                    <p>
+                        <a href="/infallible/24h-matte-cover-foundation-105-natural-beige">
+                            <span>
+                                Infallible
+                            </span>
+                            <span>
+                                Infallible 24H Matte Cover Foundation (105 Natural Beige)
+                            </span>
+                        </a>
+                    </p>
+                </header>
+                <footer>
+                    <a href="">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <span>0/5</span>
+                    </a>
+                    <span>
+                        <a href="">VIEW PRODUCT</a>
+                    </span>
+                </footer>
+            </div>
+            <p>Try it</p>
+            <div>
+                <header>
+                    <img src="https://www.lorealparis.co.in/-/media/project/loreal/brand-sites/oap/apac/in/local-products/makeup/face-makeup/3600522862482_packshot.png?rev=e9232052d3c7491397d83224cf6e5c4e?w=60&hash=7A8FFF19662A2DB4E4215384E9F8A48D3B270AA9 60w"
+                        alt="face-pack" width="140" height="300">
+                    <a href="">
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                        <i class="fa fa-circle-o"></i>
+                    </a>
+                    <p>
+                        <a href="/infallible/24h-matte-cover-foundation-105-natural-beige">
+                            <span>
+                                Infallible
+                            </span>
+                            <span>
+                                Infallible 24H Matte Cover Foundation (105 Natural Beige)
+                            </span>
+                        </a>
+                    </p>
+                </header>
+                <footer>
+                    <a href="">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <span>0/5</span>
+                    </a>
+                    <span>
+                        <a href="">VIEW PRODUCT</a>
+                    </span>
+                </footer>
+            </div>
+        </div>
+
+        <div>
+            <ol style="list-style-type:none;">
+                <li>
+                    <a href="">
+                        <span>
+                            HOME
+                        </span>
+                    </a>
+                    <span>/</span>
+                </li>
+                <li>
+                    <a href="">
+                        <span>
+                            MAKEUP
+                        </span>
+                    </a>
+                    <span>/</span>
+                </li>
+                <li>
+                    <a href="">
+                        <span>
+                            FACE
+                        </span>
+                    </a>
+                    <span>/</span>
+                </li>
+            </ol>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <section>
+                <h3>Our Categories</h3>
+                <ul>
+                    <li>
+                        <a href="">Skincare</a>
+                    </li>
+                    <li>
+                        <a href="">Hair Care</a>
+                    </li>
+                    <li>
+                        <a href="">Hair Color</a>
+                    </li>
+                    <li>
+                        <a href="">Makeup</a>
+                    </li>
+                    <li>
+                        <a href="">Men</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>More to Explore</h3>
+                <ul>
+                    <li>
+                        <a href="">Virtual-Try-On</a>
+                    </li>
+                    <li>
+                        <a href="">About us</a>
+                    </li>
+                    <li>
+                        <a href="">Beauty Magzine</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>Social</h3>
+                <ul>
+                    <li>
+                        <i class="fab fa-facebook-f"></i>
+                        <a href="">Facebook</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-twitter"></i>
+                        <a href="">Twitter</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-youtube"></i>
+                        <a href="">YouTube</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div>
+            <section>
+                <a href="">
+                    <img src="https://www.lorealparis.co.in/-/media/project/loreal/brand-sites/oap/shared/baseline/navigationext/loreal-paris-black-logo.svg?rev=043a5893295a412fb46ec561cbd31147&la=en-IN&hash=3A918F695AE624EF3B9502BA9F37CEB91CBC97BA"
+                        alt="logo">
+                </a>
+                <a href="">Change Country </a>
+            </section>
+            <hr>
+            <section>
+                <a href="">Cookie policy</a>
+                <a href="">Cookie Settings</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Terms of use</a>
+                <a href="">User Content Permissions</a>
+                <p>@ 2023 L'Oréal Paris</p>
+            </section>
+        </div>
+
+    </footer>
+</body>
+
+</html>

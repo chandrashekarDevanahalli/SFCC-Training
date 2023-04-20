@@ -1,0 +1,12 @@
+{
+    "caches": [
+        {
+            "id": "paypalRestOauthToken",
+            "expireAfterSeconds": 32000
+        },
+        {
+            "id": "paypalCreditFinancingOptionsOcapi",
+            "expireAfterSeconds": 300
+        }
+    ]
+}

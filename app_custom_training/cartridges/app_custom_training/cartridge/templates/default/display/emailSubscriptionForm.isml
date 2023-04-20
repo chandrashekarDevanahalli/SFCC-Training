@@ -1,0 +1,18 @@
+<form method="post" action="${pdict.actionURL}">
+    <h1> Email Subscription</h1>
+    Email Address :
+    <input type="email" name="email" value=""><br><br>
+    First Name :
+    <input type="text" name="fname" value=""><br><br>
+    Last Name :
+    <input type="text" name="lname" value=""><br><br>
+
+
+    category preferences :<br><br>
+    Womens:<input type="checkbox" name="Womens" value="Womens"><br><br>
+    Mens:<input type="checkbox" name="Mens" value="Mens"><br><br>
+    Electronics:<input type="checkbox" name="Electronics" value="Electronics"><br><br>
+
+
+    <input type="submit" name="Subscribe" value="Subscribe">
+</form>

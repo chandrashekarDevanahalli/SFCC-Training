@@ -1,0 +1,10 @@
+<iscookie 
+name = "UserID"
+value = "good"
+comment = "your international customer ID"
+domain = ".foo.com"
+path = "/acme"
+maxAge = "10000"
+version = "0"
+secure = "on"
+/>

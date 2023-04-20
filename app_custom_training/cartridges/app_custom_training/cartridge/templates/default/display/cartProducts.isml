@@ -1,0 +1,62 @@
+<isdecorate template="common/layout/page">
+
+    <table border="2">
+        <tr>
+            <th>
+                <h1>ProductID</h1>
+            </th>
+            <th>
+                <h1>ProductName</h1>
+            </th>
+            <th>
+                <h1>ProductPrice</h1>
+            </th>
+            <th>
+                <h1>ProductCategory</h1>
+            </th>
+            <th>
+                <h1>ProductQuantity</h1>
+            </th>
+        </tr>
+        <isloop items="${pdict.productDetails}" var="ele">
+            <tr>
+                <td>
+                    <h1>${ele.productID}</h1>
+                </td>
+                <td>
+                    <h1>${ele.productName}</h1>
+                </td>
+                <td>
+                    <h1>${ele.price}</h1>
+                </td>
+                <td>
+                    <h1>${ele.category}</h1>
+                </td>
+                <td>
+                    <h1>${ele.quantityValue}</h1>
+                </td>
+
+            </tr>
+        </isloop>
+    </table>
+</isdecorate>
+
+
+<isloop items="${pdict.currentBasket}" var="element">
+    ${element.product.masterProduct.categories.displayName}
+</isloop>
+
+<h1>
+    <isloop items="${pdict.currentBasket}" var="ele" status="loopstatus">
+        ${ele.productID}
+        ${ele.productName}
+        ${ele.price}
+        ${ele.category}
+        ${ele.quantity}
+        ${ele.product.categories[0].ID}
+        ${ele.product.masterProduct.categories.ID}
+        ${ele.product.masterProduct.categories[1].displayName}
+    </isloop>
+</h1>
+
+<ismodule template="" name="" attribute="" />

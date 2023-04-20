@@ -1,0 +1,19 @@
+<body>
+
+    <h1>${Resource.msgf('email.account.registration.greeting', 'registration', null, pdict.firstName, pdict.lastName)}</h1>
+
+    <p>${Resource.msg('email.account.registration.login', 'registration', null)}</p>
+
+    <p><a href="${pdict.loginShowURL}">${pdict.loginShowURL}</a></p>
+
+    <p>${Resource.msgf('email.account.registration.credentials', 'registration', null, pdict.email)} <b>${pdict.password}</b></p>
+
+    <p>${Resource.msg('email.account.registration.password', 'registration', null)}</p>
+
+    <p><a href="${pdict.editPasswordURL}">${pdict.editPasswordURL}</a></p>
+
+    <p>${Resource.msg('email.account.registration.access', 'registration', null)}</p>
+
+    <p>${Resource.msg('email.account.registration.reply', 'registration', null)}</p>
+
+</body>

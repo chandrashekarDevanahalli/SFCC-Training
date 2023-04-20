@@ -1,0 +1,74 @@
+<isdecorate template="common/layout/page">
+    <isinclude template="components/modules" />
+    <iscontentasset aid="customerAddresses" />
+
+    <table border="2">
+        <tr>
+            <th>
+                <h1>ID</h1>
+            </th>
+            <th>
+                <h1>First Name</h1>
+            </th>
+            <th>
+                <h1>Last Name</h1>
+            </th>
+            <th>
+                <h1>Address1</h1>
+            </th>
+            <th>
+                <h1>Address2</h1>
+            </th>
+            <th>
+                <h1>City</h1>
+            </th>
+            <th>
+                <h1>State</h1>
+            </th>
+            <th>
+                <h1>Country</h1>
+            </th>
+        </tr>
+        <isloop items="${pdict.data}" var="element">
+            <tr>
+                <td>
+                    <h1>${element.ID}</h1>
+                </td>
+                <td>
+                    <h1>${element.firstName}</h1>
+                </td>
+                <td>
+                    <h1>${element.lastName}</h1>
+                </td>
+                <td>
+                    <h1>${element.address1}</h1>
+                </td>
+                <td>
+                    <h1>${element.address2}</h1>
+                </td>
+                <td>
+                    <h1>${element.city}</h1>
+                </td>
+                <td>
+                    <h1>${element.stateCode}</h1>
+                </td>
+                <td>
+                    <h1>${element.countryCode}</h1>
+                </td>
+            </tr>
+        </isloop>
+    </table>
+</isdecorate>
+
+
+<isset name="a" value="100" scope="session" />
+<isset name="b" value="10" scope="page" />
+
+${session.custom.a}
+${b}
+<isremove name="a" scope="session" />
+
+${session.custom.a}
+${b}
+
+<!--- ---!>

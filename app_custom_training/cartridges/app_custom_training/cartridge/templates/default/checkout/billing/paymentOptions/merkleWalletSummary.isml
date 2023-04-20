@@ -1,0 +1,13 @@
+<div class="merkleWallet-type">
+    <span>
+        ${paymentInstrument.paymentMethod}</span>
+</div>
+<div class="merkleWallet-firstName">
+    ${paymentInstrument.merkleWalletFirstName}
+</div>
+<div class="merkleWallet-lastName">
+    ${paymentInstrument.merkleWalletLastName}
+</div>
+<div class="merkleWallet-phoneNumber">
+    ${paymentInstrument.merkleWalletPhoneNumber}
+</div>

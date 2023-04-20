@@ -1,0 +1,3 @@
+<ismodule template="/display/myTag" name="live" attribute="product" />
+
+<islive product="${pdict.List}" />

@@ -1,0 +1,259 @@
+<isdecorate template="common/layout/page">
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/productDetail.js');
+        assets.addCss('/css/product/detail.css');
+    </isscript>
+    <isset name="product" value="${pdict.product}" scope="page" />
+    <isset name="isQuickView" value="${false}" scope="page" />
+    <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
+    <isobject object="${product.raw}" view="detail" />
+    <div class="container product-detail product-wrapper" data-pid="${product.id}">
+        <div class="row">
+            <div class="col-12">
+                <!--Breadcrumbs-->
+                <div class="product-breadcrumb d-md-none">
+                    <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+                </div>
+
+                <!-- Product Name -->
+                <div class="row">
+                    <div class="d-md-none  hidden-sm-down col-sm-12">
+                        <h1 class="product-name">${product.productName}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Breadcrumbs-->
+        <div class="row">
+            <div class="product-breadcrumb col hidden-sm-down">
+                <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+            </div>
+        </div>
+        <div class="row">
+            <!-- Product Images Carousel -->
+            <isinclude template="product/components/imageCarousel" />
+
+            <div class="col-12 col-sm-6">
+                <!-- Product Name -->
+                <div class="row">
+                    <div class="col">
+                        <h1 class="product-name">${product.productName}</h1>
+                    </div>
+                </div>
+
+
+                <!-- Product Rating -->
+                <div class="row">
+                    <div class="col">
+                        <iscomment>
+                            <isinclude template="product/components/pidRating" />
+                        </iscomment>
+                        <isinclude template="product/components/productRating" />
+                        <span class="rating-details">${product.rating} (381) <a href="">Write a review</a></span>
+                    </div>
+                </div>
+                <!-- Product Description -->
+                <div class="row mg-tb-15 description">
+                    <isinclude template="product/components/description" />
+                </div>
+
+                <!-- Product Specification-->
+                <div class="product-specification mg-tb-15">
+                    <a href="">See Product Specification</a>
+                </div>
+
+                <!-- Self Rating -->
+                <div class="self-rating mg-tb-15">
+                    <span class="rating">5X</span>
+                    <span class="text">TESTED & PROVEN TO REMOVE <b>5X MORE</b> CONTAMINANTS THAN OTHER RO SYSTEM</span>
+                    <iscomment> <span class="text">${Resource.msg('self.rating', 'product', null)}</span> </iscomment>
+                </div>
+
+                <!-- Product Availability -->
+                <isinclude template="product/components/productAvailability" />
+
+                <div class="attributes">
+                    <!-- Attributes and Quantity -->
+                    <isinclude template="product/components/mainAttributes" />
+
+                    <isset name="isBundle" value="${false}" scope="page" />
+                    <isset name="loopState" value="${{
+                                                   count: 1}}" scope="page" />
+                    <div class="product-variation-section">
+                        <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                            <div class="row" data-attr="${attr.id}">
+                                <div class="col-8">
+                                    <isinclude template="product/components/variationAttribute" />
+                                </div>
+                            </div>
+                        </isloop>
+
+                        <!-- Size Chart -->
+                        <isif condition="${product.variationAttributes && product.sizeChartId}">
+                            <div class="size-chart">
+                                <isinclude template="product/components/sizeChart" />
+                            </div>
+                        </isif>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Prices -->
+                            <div class="prices d-flex align-items-center">
+                                <div class="radio-button">
+                                    <input type="radio" name="sale-price" value="" checked="checked">
+                                </div>
+                                <div class="sale-price-value">
+                                    <span class="text">${Resource.msg('sale.price', 'product', null)}</span>
+                                    <div class="d-flex align-items-center">
+                                        <isset name="price" value="${product.price}" scope="page" />
+                                        <isinclude template="product/components/pricing/main" />
+                                        <span class="msrp">MSRP</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Water For Life Price -->
+                    <div class="water-for-life">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="prices water-life-price d-flex align-items-center">
+                                    <div class="radio-button">
+                                        <input type="radio" name="sale-price" value="">
+                                    </div>
+                                    <div class="sale-price-value">
+                                        <span class="text">${Resource.msg('water.for.life', 'product', null)}</span>
+                                        <span><i class="fa fa-question-circle-o"></i></span>
+                                        <div class="d-flex align-items-center">
+                                            <isset name="price" value="${product.price}" scope="page" />
+                                            <isinclude template="product/components/pricing/main" />
+                                            <iscomment> <span class="value">${product.price.sales.formatted}</span>
+                                            </iscomment>
+                                            <span class="promo-text">50% OFF + Free Shipping!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="purchase-water-for-life hidden-md-down">
+                            <div>
+                                <i class='fa fa-caret-left'></i>
+                                MOST CUSTOMERS PURCHASE WITH WATER FOR LIFE
+                            </div>
+                        </div>
+                    </div>
+
+                    <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                        <isif condition="${attributeStatus.last && !isBundle}">
+                            <!-- Quantity Drop Down Menu -->
+                            <div class="attribute quantity col-4 d-flex align-items-center">
+                                <isinclude template="product/components/quantity" />
+                            </div>
+                        </isif>
+                    </isloop>
+
+                    <isif condition="${!product.variationAttributes}">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="simple-quantity">
+                                    <isinclude template="product/components/quantity" />
+                                </div>
+                            </div>
+                        </div>
+                    </isif>
+
+                    <div class="product-options">
+                        <isif condition="${product.options && product.options.length > 0}">
+                            <isinclude template="product/components/options" />
+                        </isif>
+                    </div>
+
+                    <!-- Product Personalization -->
+                    <div class="product-personalization d-none">
+                        <isif condition="${product.isEligibleForPersonalization}">
+                            <isinclude template="product/components/personalization" />
+                        </isif>
+                    </div>
+
+                    <!-- Back In Stock Notification -->
+                    <iscomment>
+                        <isif condition="${!pdict.isInstock}">
+                            <div class="pdp-back-instock-notification-section d-none">
+                                <isinclude template="product/components/backInStockNotification" />
+                            </div>
+                        </isif>
+                    </iscomment>
+
+                    <!-- Size Chart -->
+                    <iscomment>
+                        <isif condition="${product.variationAttributes && product.sizeChartId}">
+                            <div class="row">
+                                <div class="size-chart col-12">
+                                    <isinclude template="product/components/sizeChart" />
+                                </div>
+                            </div>
+                        </isif>
+                    </iscomment>
+
+
+                    <div class="add-to-cart-actions">
+                        <!-- Cart and [Optionally] Apple Pay -->
+                        <iscomment>
+                            <isif condition="${pdict.isInstock}">
+                            </isif>
+                        </iscomment>
+                        <isinclude template="product/components/addToCartProduct" />
+                    </div>
+
+                    <!-- WISHLIST -->
+                    <div class="row">
+                        <div class="col text-center mg-tb-15">
+                            <isif condition=${!!!isQuickView}>
+                                <isinclude template="wishlist/components/addToWishListButton" />
+                            </isif>
+                        </div>
+                    </div>
+
+                    <!-- Applicable Promotions -->
+                    <div class="row">
+                        <div class="col-12 promotions">
+                            <isinclude template="product/components/promotions" />
+                        </div>
+                    </div>
+
+                    <!-- Social Sharing Icons -->
+                    <div class="row d-none">
+                        <isinclude template="product/components/socialIcons" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <isslot id="cts-recommendations-m" description="Complete the set products" context="global"
+                context-object="${pdict.product.raw}" />
+        </div>
+
+        <iscomment>
+            <isset name="loopState" value="${{
+                                           count: 1}}" scope="page" />
+        </iscomment>
+        <iscomment>
+            <isinclude template="product/components/descriptionAndDetails" />
+        </iscomment>
+
+        <div class="recommendations">
+            <isslot id="product-recommendations-m" description="Recommended products" context="global"
+                context-object="${pdict.product.raw}" />
+        </div>
+    </div>
+
+    <!-- Aquasana Content -->
+    <isinclude template="product/aquasanaContent" />
+
+    </isobject>
+</isdecorate>

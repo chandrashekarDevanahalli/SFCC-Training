@@ -1,0 +1,12 @@
+<div class="product-number-rating clearfix">
+    <!-- Product Number -->
+    <div class="product-number pull-left">
+        <isinclude template="product/components/productNumber" />
+    </div>
+
+    <!-- Product Rating -->
+    <div class="ratings pull-rightt">
+        <isinclude template="product/components/productRating" />
+        <span class="sr-onlyy">${Resource.msgf('label.product.ratings', 'common', null, product.rating)}</span>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+ 
+{
+  "step-types":
+  {
+    "script-module-step":
+    [
+      {
+        "@type-id":"custom.MyCustomScriptStepType.myProductCategoryPathJob",
+        "@supports-parallel-execution":"true",
+        "@supports-site-context":"true",
+        "@supports-organization-context":"false",
+        "description":"My custom script step type",
+        "module":"app_custom_training/cartridge/scripts/jobs/myProductCategoryPathJob.js",
+        "function":"run",
+        "transactional":"true",
+        "timeout-in-seconds":"900",
+        "parameters":
+        {
+          "parameter":
+          [
+            {
+              "@name":"MyParameter1",
+              "@type":"boolean",
+              "@required":"true",
+              "description":"A required boolean parameter."
+            },
+            {
+              "@name":"MyParameter2",
+              "@type":"long",
+              "@required":"false",
+              "description":"An optional long parameter. The default value is 10 when not defined.",
+              "default-value":"10"
+            },
+            {
+              "@name":"MyParameter4",
+              "@type":"string",
+              "@required":"false",
+              "description":"An optional string parameter, length must be between 10 and 50",
+              "min-length":"10",
+              "max-length":"50"
+            }
+          ]
+        },
+        "status-codes": 
+        {
+                  "status": 
+          [
+                      {
+                          "@code": "ERROR",
+                          "description": "Used when the step failed with an error."
+                      },
+                      {
+                          "@code": "FINISHED",
+              "description": "Used when the step finished successfully."
+                      },
+                      {
+                          "@code": "FINISHED_WITH_WARNINGS",
+              "description": "Used when the step finished with warnings."
+                      }
+                  ]
+              }
+      },
+      {
+        "@type-id":"custom.MyCustomScriptStepType.myAllProductsUsingRestJob",
+        "@supports-parallel-execution":"true",
+        "@supports-site-context":"true",
+        "@supports-organization-context":"false",
+        "description":"My custom script step type",
+        "module":"app_custom_training/cartridge/scripts/jobs/myAllProductsToCsvRestJob.js",
+        "function":"run",
+        "transactional":"true",
+        "timeout-in-seconds":"900",
+        "parameters":
+        {
+          "parameter":
+          [
+            {
+              "@name":"MyParameter1",
+              "@type":"boolean",
+              "@required":"true",
+              "description":"A required boolean parameter."
+            },
+            {
+              "@name":"MyParameter2",
+              "@type":"long",
+              "@required":"false",
+              "description":"An optional long parameter. The default value is 10 when not defined.",
+              "default-value":"10"
+            },
+            {
+              "@name":"MyParameter4",
+              "@type":"string",
+              "@required":"false",
+              "description":"An optional string parameter, length must be between 10 and 50",
+              "min-length":"10",
+              "max-length":"50"
+            }
+          ]
+        },
+        "status-codes": 
+        {
+                  "status": 
+          [
+                      {
+                          "@code": "ERROR",
+                          "description": "Used when the step failed with an error."
+                      },
+                      {
+                          "@code": "FINISHED",
+              "description": "Used when the step finished successfully."
+                      },
+                      {
+                          "@code": "FINISHED_WITH_WARNINGS",
+              "description": "Used when the step finished with warnings."
+                      }
+                  ]
+              }
+            }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+    <field formid="countryCode" label="label.input.country" type="string" mandatory="true" missing-error="address.state.missing" value-error="address.field.invalid" parse-error="error.message.required">
+        <options>
+            <option optionid="" label="resource.select" value=""/>
+
+            <!-- Country List -->
+            <option optionid="IN" label="country.global.india" value="INDIA"/>
+            <option optionid="US" label="country.global.usa" value="USA"/>
+            <option optionid="GM" label="country.global.germany" value="GERMANY"/>
+            <option optionid="CA" label="country.global.canada" value="CANADA"/>
+            <option optionid="RU" label="country.global.russia" value="RUSSIA"/>
+
+        </options>
+    </field>
+</form>

@@ -1,0 +1,5 @@
+<h1>
+    "Dear ${pdict.emailSubscriptionForm.firstName.value}.${pdict.emailSubscriptionForm.lastName.value} ,Thankyou for
+    subscribing for
+    email alerts"
+</h1>

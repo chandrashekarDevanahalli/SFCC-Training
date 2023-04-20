@@ -1,0 +1,9 @@
+<isdecorate template="common/layout/page">
+
+    <h1>${pdict.ProductDetails}</h1>
+</isdecorate>
+
+
+<isset name="a" value="100" scope="session" />
+
+${session.custom.a}

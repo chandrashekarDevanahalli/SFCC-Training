@@ -1,0 +1,85 @@
+<style>
+    .form-group.required ::before {
+
+        content: "*";
+
+        color: #e71b1b;
+
+    }
+</style>
+
+<isdecorate template="common/layout/page">
+
+    <h1>
+        ${Resource.msg('emailSubscription.header', 'emailSubscription', null)}
+    </h1>
+    <form class="email-form-submit" action="${URLUtils.url('EmailFormSubscribeAjax-Save')}" method="post">
+
+
+        <iscomment>
+            FirstName
+        </iscomment>
+        <div class="col-6">
+            <div class="form-group
+        <isif condition=" ${pdict.emailSubscriptionForm.firstName.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="firstName">
+                    <isprint value="${pdict.emailSubscriptionForm.firstName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="firstName" <isprint
+                    value="${pdict.emailSubscriptionForm.firstName.attributes}" encoding="off" />>
+                <div class="invalid-feedback" id="form-fname-error">
+                    <isprint value="${pdict.emailSubscriptionForm.firstName.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+
+        <iscomment>
+            LastName
+        </iscomment>
+        <div class="col-6">
+            <div class="form-group
+        <isif condition=" ${pdict.emailSubscriptionForm.lastName.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="registration-form-lname">
+                    <isprint value="${pdict.emailSubscriptionForm.lastName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control ${pdict.emailSubscriptionForm.lastName.valid ? "" : " is -
+                                                   invalid "}" id="registration-form-lname"
+                    data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+                    data-range-error="${Resource.msg('error.message.50orless', 'forms', null)}"
+                    aria-describedby="form-lname-error" <isprint
+                    value=${pdict.emailSubscriptionForm.lastName.attributes} encoding="off" />>
+                <div class="invalid-feedback" id="form-lname-error">
+                    <isprint value="${pdict.emailSubscriptionForm.lastName.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+
+        <iscomment>
+            EmailID
+        </iscomment>
+        <div class="col-6">
+            <div class="form-group 
+             <isif condition=" ${pdict.emailSubscriptionForm.email.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="registration-form-email">
+                    <isprint value="${pdict.emailSubscriptionForm.email.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control ${pdict.emailSubscriptionForm.email.valid ? "" : " is-invalid"}"
+                    id="registration-form-email" <isprint value=${pdict.emailSubscriptionForm.email.attributes}
+                    encoding="off" />>
+                <div class="invalid-feedback" id="form-email-error">
+                    <isprint value="${pdict.emailSubscriptionForm.email.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+        <iscomment>
+            Button
+        </iscomment>
+
+        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+
+        <button type="submit-form" class="btn btn-block btn-primary">
+            ${Resource.msg('button.save.subscribe', 'forms', null)}
+        </button>
+
+    </form>
+</isdecorate>

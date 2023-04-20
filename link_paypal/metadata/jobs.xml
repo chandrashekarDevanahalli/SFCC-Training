@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="RemoveOutdatedPayPalTransaction" priority="0">
+        <description>
+            Removes PaypalNewTransactions custom object that is older than a year with info about PayPal transaction from BM.
+        </description>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="removeCustomObject" type="custom.removePaypalCustomObject" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2019-10-25Z</date-from>
+                    <start-time>04:00:00.000Z</start-time>
+                    <interval>2M</interval>
+                    <day-of-week/>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+    <job job-id="MergeAccountsPayPalAndSingleAuthentication" priority="0">
+        <description>
+            Merge user accounts created via PayPal and Single Authentication. Remove accounts created by PayPal
+        </description>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="mergeAccounts" type="custom.MergeAccountsPayPalAndSingleAuthentication" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="delay">500</parameter>
+                </parameters>
+                <rules>
+                    <on-exit status="ERROR">
+                        <stop-flow/>
+                    </on-exit>
+                    <on-exit status="OK">
+                        <continue/>
+                    </on-exit>
+                </rules>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-08-11Z</date>
+                <time>08:08:37.000Z</time>
+                <rules>
+                    <on-exit status="ERROR">
+                        <disable-trigger/>
+                    </on-exit>
+                </rules>
+            </run-once>
+        </triggers>
+    </job>
+</jobs>

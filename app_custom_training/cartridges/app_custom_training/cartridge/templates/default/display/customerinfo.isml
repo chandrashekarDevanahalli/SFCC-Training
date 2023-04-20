@@ -1,0 +1,6 @@
+<isif condition="${customer.isAuthenticated()}">
+    <isprint value="${Resource.msgf('customerInfo.authenticated.message', 'training', null, customer.getProfile().getFirstName(), customer
+                    .getProfile().getLastName())}" />
+<iselse/>
+    <isprint value="${Resource.msg('customerInfo.guest.message', 'training', null)}" />
+</isif>

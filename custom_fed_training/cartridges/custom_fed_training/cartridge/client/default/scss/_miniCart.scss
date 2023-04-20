@@ -1,0 +1,182 @@
+@import "~base/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "productCard";
+
+.minicart {
+    position: relative;
+
+    h1 {
+        font-size: 1rem;
+        font-family: sans-serif !important;
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+
+    .cart {
+        padding-top: 0.625em;
+        padding-bottom: 0.625em;
+        background-color: $body-bg;
+    }
+
+    .remove-btn {
+        color: $slightly-darker-gray;
+        float: right;
+        // background-color: white;
+        background-color: $light-gray;
+        border: none;
+        font-size: 1.625em;
+        margin-top: -0.313em;
+        padding: 0;
+    }
+
+    .product-summary {
+        margin-right: -0.938em;
+        max-height: 21.875em;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 0.938em;
+    }
+
+    .card-body {
+        padding: 0.625em;
+        margin-top: 5px;
+    }
+
+    .quantity-label {
+        font-size: 0.813em;
+    }
+
+    .quantity {
+        width: 100%;
+    }
+
+    .popover {
+        top: 100%;
+        left: auto;
+        right: 0;
+        min-width: 23.44rem;
+        max-width: 23.44rem;
+        min-height: 22.7rem;
+        display: none;
+
+        &::before {
+            left: auto;
+            right: 15px;
+        }
+
+        &::after {
+            left: auto;
+            right: 16px;
+        }
+
+        &.show {
+            display: block;
+        }
+    }
+
+    .minicart-footer {
+        // border-top: 1px solid $grey3;
+        border-top: 1px solid $primary;
+        .sub-total {
+            color: $primary;
+            font-size: 1.2em;
+        }
+
+        .minicart-account-links {
+            border: 1px solid $primary;
+            border-radius: 5px;
+            margin-top: 20px;
+
+            & p {
+                margin-bottom: 15px;
+                margin-top: 15px;
+                padding-left: 30px;
+                padding-right: 30px;
+                text-align: center;
+            }
+
+            & .minicart-login-link {
+                color: blue;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .estimated-total {
+        margin-top: 0.625em;
+    }
+
+    .sub-total-label {
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+
+    .sub-total {
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+    .line-item-divider {
+        margin: 0.625em -0.625em 0.625em -1.325em;
+    }
+
+    .line-item-name {
+        width: 90%;
+    }
+
+    .top-border {
+        // border-top: 1px solid #{var(--skin-primary-color-1)};
+        border-top: 1px solid $primary;
+    }
+    .minicart-error {
+        margin-bottom: 10px;
+    }
+
+    .checkout-continue > div {
+        height: 100%;
+    }
+
+    a.checkout-btn {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+}
+
+.hide-link-med {
+
+    @include media-breakpoint-only(sm) {
+        display: none;
+    }
+}
+
+.hide-no-link {
+
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+
+    @include media-breakpoint-down(xs) {
+        display: none;
+    }
+}
+
+.water-for-life-subscription {
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    img {
+        width: 60px;
+        height: auto;
+    }
+    div.text {
+        color: #04b6c4;
+        padding: 0px 10px;
+    }
+}

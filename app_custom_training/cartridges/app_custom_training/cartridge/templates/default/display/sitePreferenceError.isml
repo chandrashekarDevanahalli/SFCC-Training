@@ -1,0 +1,9 @@
+<isdecorate template="common/layout/page">
+    <isstatus value="404" />
+    <isif condition="${pdict.List == ''}">
+        <h1>Products not available in Site preference</h1>
+    <iselse/>
+        <h1>Error Product ID = '${pdict.List}' details Not Available in SitePreference</h1>
+    </isif>
+
+</isdecorate>

@@ -1,0 +1,15 @@
+<isdecorate template="common/layout/page">
+    <table border="2">
+        <h1>
+            First Name : ${pdict.ordershipObj.firstName}<br>
+
+            Last Name : ${pdict.ordershipObj.lastName}<br>
+
+            Shipping Company Name : ${pdict.ordershipObj.companyName}<br>
+
+            Billing Company Name : ${pdict.orderbillObj.companyName}<br>
+
+        </h1>
+
+    </table>
+</isdecorate>

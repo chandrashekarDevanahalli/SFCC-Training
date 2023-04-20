@@ -1,0 +1,9 @@
+<!--- line item total price --->
+<div class="col-4 line-item-total-price">
+    <p class="line-item-price-info">
+        ${Resource.msg('label.total.price', 'cart', null)}
+    </p>
+    <div class="item-total-${lineItem.UUID} price">
+        <div class="pricing line-item-total-price-amount item-total-${lineItem.UUID}">${lineItem.price}</div>
+    </div>
+</div>

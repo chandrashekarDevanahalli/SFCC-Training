@@ -1,0 +1,140 @@
+<style>
+    .form-group.required ::before {
+
+        content: "*";
+
+        color: #e71b1b;
+
+    }
+</style>
+
+<isdecorate template="common/layout/page">
+
+    <h1>
+        ${Resource.msg('emailSubscription.header', 'emailSubscription', null)}
+    </h1>
+    <form action="${URLUtils.url('EmailFormMetaData-Save')}" method="post">
+
+
+        <iscomment>
+            FirstName
+        </iscomment>
+        <div class="col-6">
+            <div class="form-group
+        <isif condition=" ${pdict.emailSubscriptionForm.firstName.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="firstName">
+                    <isprint value="${pdict.emailSubscriptionForm.firstName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="firstName" <isprint
+                    value="${pdict.emailSubscriptionForm.firstName.attributes}" encoding="off" />>
+                <div class="invalid-feedback" id="form-fname-error">
+                    <isprint value="${pdict.emailSubscriptionForm.firstName.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+
+        <iscomment>
+            LastName
+        </iscomment>
+        <div class="col-6">
+            <div class="form-group
+        <isif condition=" ${pdict.emailSubscriptionForm.lastName.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="registration-form-lname">
+                    <isprint value="${pdict.emailSubscriptionForm.lastName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control ${pdict.emailSubscriptionForm.lastName.valid ? "" : " is -
+                                                   invalid "}" id="registration-form-lname"
+                    data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+                    data-range-error="${Resource.msg('error.message.50orless', 'forms', null)}"
+                    aria-describedby="form-lname-error" <isprint
+                    value=${pdict.emailSubscriptionForm.lastName.attributes} encoding="off" />>
+                <div class="invalid-feedback" id="form-lname-error">
+                    <isprint value="${pdict.emailSubscriptionForm.lastName.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+
+        <iscomment>
+            EmailID
+        </iscomment>
+        <div class="col-6">
+            <div class="form-group 
+        <isif condition=" ${pdict.emailSubscriptionForm.email.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="registration-form-email">
+                    <isprint value="${pdict.emailSubscriptionForm.email.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control ${pdict.emailSubscriptionForm.email.valid ? "" : " is-invalid"}"
+                    id="registration-form-email" <isprint value=${pdict.emailSubscriptionForm.email.attributes}
+                    encoding="off" />>
+                <div class="invalid-feedback" id="form-email-error">
+                    <isprint value="${pdict.emailSubscriptionForm.email.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+
+        <iscomment>
+            Category Preference
+        </iscomment>
+
+        <div class="form-group custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="CategoryPreference-mens" <isprint
+                value=${pdict.emailSubscriptionForm.category.Mens.attributes} encoding="off" />
+            >
+            <label class="custom-control-label" for="CategoryPreference-mens">
+                <isprint value="${pdict.emailSubscriptionForm.category.Mens.label}" encoding="htmlcontent" />
+            </label>
+        </div>
+
+        <div class="form-group custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="CategoryPreference-womens" <isprint
+                value=${pdict.emailSubscriptionForm.category.Womens.attributes} encoding="off" />
+            >
+            <label class="custom-control-label" for="CategoryPreference-womens">
+                <isprint value="${pdict.emailSubscriptionForm.category.Womens.label}" encoding="htmlcontent" />
+            </label>
+        </div>
+
+        <div class="form-group custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="CategoryPreference-electronics" <isprint
+                value=${pdict.emailSubscriptionForm.category.Electronics.attributes} encoding="off" />
+            >
+            <label class="custom-control-label" for="CategoryPreference-electronics">
+                <isprint value="${pdict.emailSubscriptionForm.category.Electronics.label}" encoding="htmlcontent" />
+            </label>
+        </div>
+
+
+        <!-- Country  -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.emailSubscriptionForm.country.countryCode.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="country">
+                    <isprint value="${pdict.emailSubscriptionForm.country.countryCode.label}" encoding="htmlcontent" />
+                </label>
+                <select class="form-control" id="country" <isprint
+                    value="${pdict.emailSubscriptionForm.country.countryCode.attributes}" encoding="off" />
+                autocomplete="address-level1">
+                <isloop items=${pdict.emailSubscriptionForm.country.countryCode.options} var="country">
+                    <option id="${country.id}" value="${country.htmlValue}" <isif condition="${country.selected}">
+                        selected
+                        </isif>>${country.label || ' '}</option>
+                </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+        </div>
+        <iscomment>
+            Button
+        </iscomment>
+
+
+
+        <button type="submit" class="btn btn-block btn-primary">
+            ${Resource.msg('button.save.subscribe', 'forms', null)}
+        </button>
+
+    </form>
+</isdecorate>
+
+<iscookie name="product" value="good" />

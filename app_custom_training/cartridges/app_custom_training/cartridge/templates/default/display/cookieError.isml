@@ -1,0 +1,7 @@
+<isdecorate template="common/layout/page">
+    <isif condition="${pdict.List == ''}">
+        <h1>ProductIDs not available in Cookie</h1>
+    <iselse/>
+        <h1>Error Product ID = '${pdict.List}' details Not Available in Catalog Product List</h1>
+    </isif>
+</isdecorate>

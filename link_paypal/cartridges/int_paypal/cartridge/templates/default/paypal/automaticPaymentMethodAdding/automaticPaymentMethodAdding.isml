@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/paypal.css')}"/>
+<script defer type="text/javascript" src="${URLUtils.staticURL('/js/int_paypal_automaticPaymentMethodAdding.min.js')}"></script>
+<script defer type="text/javascript" src="${URLUtils.staticURL('/js/main.js')}"></script>
+<script type="text/javascript" src="${pdict.paypal.sdkUrl}"></script>
+
+<div class="automatic-payment-adding">
+    <div class="automatic-payment-adding_title">
+        <span>${Resource.msg('paypal.automatic.payment.adding.question.' + pdict.addingStage, 'locale', null)}</span>
+    </div>
+    <div class="automatic-payment-adding_buttons">
+        <div class="automatic-payment-adding_button automatic-payment-adding_button-yes js-apma-button-yes">
+            ${Resource.msg('paypal.automatic.payment.adding.button.yes.title', 'locale', null)}
+        </div>
+        <div class="automatic-payment-adding-paypal-button js-apma-button-paypal"
+            data-paypal-urls="${pdict.paypal.paypalUrls}"
+            data-adding-stage="${pdict.addingStage}"
+            data-address-object="${pdict.addressObject}"
+            data-redirect-url="${pdict.redirectURL}">
+        </div>
+        <a href="${pdict.redirectURL}" class="automatic-payment-adding_button automatic-payment-adding_button-no">
+            ${Resource.msg('paypal.automatic.payment.adding.button.no.title', 'locale', null)}
+        </a>
+    </div>
+    <div class="automatic-payment-adding_error">
+    </div>
+</div>

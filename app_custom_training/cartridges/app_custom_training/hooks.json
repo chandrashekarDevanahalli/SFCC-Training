@@ -1,0 +1,24 @@
+{
+    "hooks":[
+        {
+            "name": "dw.system.request.onSession",
+            "script": "./cartridge/scripts/hooks/currencyChange.js"
+        },
+        {
+            "name": "app.payment.processor.merkle_credit",
+            "script": "./cartridge/scripts/hooks/payment/processor/merkle_credit"
+        },
+        {
+            "name": "app.payment.form.processor.merkle_credit",
+            "script": "./cartridge/scripts/hooks/payment/processor/merkle_credit_form_processor"
+        },
+        {
+            "name": "app.payment.processor.merkle_wallet",
+            "script": "./cartridge/scripts/hooks/payment/processor/merkle_wallet"
+        },
+        {
+            "name": "app.payment.form.processor.merkle_wallet",
+            "script": "./cartridge/scripts/hooks/payment/processor/merkle_wallet_form_processor"
+        }
+    ]
+}

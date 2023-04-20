@@ -1,0 +1,21 @@
+<div class="aquasana-content d-flex mg-tb-15">
+    <div class="contaminant-removal">
+        <img src="${URLUtils.staticURL('images/MaxContRemoval.svg')}" alt="contaminant removal">
+        <span>MAX CONTAMINANT REMOVAL</span>
+    </div>
+
+    <div class="tested-and-certified">
+        <img src="${URLUtils.staticURL('images/TestedCertified.svg')}" alt="tested & certified">
+        <span>TESTED & CERTIFIED</span>
+    </div>
+
+    <div class="fluoride">
+        <img src="${URLUtils.staticURL('images/ByeFluoride.svg')}" alt="goodbye, fluoride">
+        <span>GOODBYE, FLUORIDE</span>
+    </div>
+
+    <div class="easy-replacements">
+        <img src="${URLUtils.staticURL('images/EasyFilterReplace.svg')}" alt="easy replacements">
+        <span>EASY REPLACEMENTS</span>
+    </div>
+</div>

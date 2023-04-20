@@ -1,0 +1,105 @@
+<style>
+    .form-group.required ::before {
+
+        content: "*";
+
+        color: #e71b1b;
+
+    }
+</style>
+
+<isdecorate template="common/layout/page">
+
+    <h1>
+        ${Resource.msg('giftCertificate.header', 'giftCertificate', null)}
+    </h1>
+    <form action="${URLUtils.url('GiftCertificate-Save')}" method="post">
+
+        <!--yourName-->
+        <div class="col-6">
+            <div class="form-group
+        <isif condition=" ${pdict.giftCertificateForm.yourName.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="yourName">
+                    <isprint value="${pdict.giftCertificateForm.yourName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="yourName" <isprint
+                    value="${pdict.giftCertificateForm.yourName.attributes}" encoding="off" />>
+                <div class="invalid-feedback" id="form-fname-error">
+                    <isprint value="${pdict.giftCertificateForm.yourName.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+
+        <!--friendsName-->
+        <div class="col-6">
+            <div class="form-group
+        <isif condition=" ${pdict.giftCertificateForm.friendsName.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="friendsName">
+                    <isprint value="${pdict.giftCertificateForm.friendsName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="friendsName" <isprint
+                    value="${pdict.giftCertificateForm.friendsName.attributes}" encoding="off" />>
+                <div class="invalid-feedback" id="form-fname-error">
+                    <isprint value="${pdict.giftCertificateForm.friendsName.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--friendsEmail-->
+        <div class="col-6">
+            <div class="form-group 
+        <isif condition=" ${pdict.giftCertificateForm.friendsEmail.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="friendsEmail">
+                    <isprint value="${pdict.giftCertificateForm.friendsEmail.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control ${pdict.giftCertificateForm.friendsEmail.valid ? "" : " is -
+                                                   invalid "}" id="friendsEmail" <isprint value=${pdict.giftCertificateForm.friendsEmail.attributes}
+                    encoding="off" />>
+                <div class="invalid-feedback" id="form-email-error">
+                    <isprint value="${pdict.giftCertificateForm.friendsEmail.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+
+
+        <!--validEmail-->
+
+        <div class="col-6">
+            <div class="form-group 
+        <isif condition=" ${pdict.giftCertificateForm.validEmail.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="validEmail">
+                    <isprint value="${pdict.giftCertificateForm.validEmail.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control ${pdict.giftCertificateForm.validEmail.valid ? "" : " is -
+                                                   invalid "}" id="validEmail" <isprint value=${pdict.giftCertificateForm.validEmail.attributes}
+                    encoding="off" />>
+                <div class="invalid-feedback" id="form-email-error">
+                    <isprint value="${pdict.giftCertificateForm.validEmail.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+
+        <!--amount-->
+        <div class="col-6">
+            <div class="form-group 
+        <isif condition=" ${pdict.giftCertificateForm.amount.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="gc-amount">
+                    <isprint value="${pdict.giftCertificateForm.amount.label}" />
+                </label>
+                <input type="text" class="form-control ${pdict.giftCertificateForm.amount.valid ? "" : " is-invalid"}"
+                    id="gc-amount" <isprint value=${pdict.giftCertificateForm.amount.attributes} encoding="off" />>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Button-->
+        <button type="submit" class="add-to-cart-giftCertificate btn btn-block btn-primary">
+            ${Resource.msg('button.giftCertificate.purchase', 'forms', null)}
+        </button>
+
+
+    </form>
+</isdecorate>

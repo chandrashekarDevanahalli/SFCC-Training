@@ -1,0 +1,37 @@
+<iscomment>
+    <isset name="count" value="100" scope="page" />
+    <isset name="counter" value="count" scope="page" />
+    <h1>
+        ${count}
+    </h1>
+
+    <h1>
+        ${counter}
+    </h1>
+
+    ${pdict.msg}
+</iscomment>
+<isscript>
+var ArrayList = require('dw/util/ArrayList');
+var al = new ArrayList();
+    al.add(10);
+    al.add(20);
+    al.add(30);
+    al.add(30);
+</isscript>
+
+<isloop items="${pdict.List}" var="element" status="st" begin="0" end="4" step="1">
+
+    <h1>element at ${st.index}of ${element} is ${st.count} even is ${st.even}
+        and odd is ${st.odd} first ${st.first} last ${st.last}</h1>
+</isloop>
+
+<isloop items="${al}" var="element" status="st">
+    <h1>element at ${st.index}of ${element} is ${st.count}</h1>
+</isloop>
+
+<h1>
+    <isprint value="100" encoding="on" />
+</h1>
+
+<isset name="a" value="100" scope="page" />

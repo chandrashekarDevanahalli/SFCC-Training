@@ -1,0 +1,43 @@
+<div class="gc card-header">
+    <h2 class="gc card-header-custom">${Resource.msg('gc.heading.payment', 'checkout', null)}</h2>
+</div>
+<div class="card-body">
+
+
+    <isset name="giftCertificateForm" value="${pdict.forms.billingForm.giftCertificateFields}" scope="page" />
+
+
+    <div class="row" id="gift-certificate-form">
+        <div class="col-6">
+            <div class="form-group
+                            ${giftCertificateForm.firstName.htmlName}">
+                <label class="form-control-label" for="giftCertificate">${Resource.msg('gc.code.redeem.name', 'checkout', null)}</label>
+                <input autofocus type="text" class="form-control ReedemGiftCertificate" id="giftCertificate" <isprint
+                    value=${giftCertificateForm.firstName.attributes} encoding="off" />
+                autocomplete="given-name" >
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <button type="button" id="giftCertificate-form-Apply"
+                data-url="${URLUtils.http('GiftCertificateCode-ApplyCode')}"
+                class="btn btn-primary btn-block giftCertificate-btn-apply">
+                ${Resource.msg('gc.button.apply', 'checkout', null)}
+            </button>
+        </div>
+        <div class="col-sm-6">
+            <button type="button" id="giftCertificate-check-balance"
+                data-url="${URLUtils.http('GiftCertificateCode-Check')}"
+                class="btn btn-primary btn-block giftCertificate-btn-checkbalance">
+                ${Resource.msg('gc.button.checkbalance', 'checkout', null)}
+            </button>
+        </div>
+    </div>
+    <p class="giftCertificate-data-container"></p>
+    <a href="" class="gift-cert-remove d-none" data-url="${URLUtils.http('GiftCertificateCode-remove')}">.....remove</a>
+</div>

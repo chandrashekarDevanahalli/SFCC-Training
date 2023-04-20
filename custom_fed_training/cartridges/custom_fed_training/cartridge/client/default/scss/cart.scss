@@ -1,0 +1,245 @@
+@charset "UTF-8";
+
+@import "~base/cart";
+
+.checkou-progress-bar {
+    margin: 30px 0px;
+
+    div {
+        width: 130px;
+        text-align: center;
+    }
+
+    i {
+        padding: 10px 12px;
+        border-radius: 50%;
+    }
+
+    span.text {
+        // font-weight: 500;
+        margin: 5px 0px;
+        white-space: break-spaces;
+        display: inline-block;
+        width: 105px;
+    }
+
+    hr.progress-bar-line {
+        width: 60px;
+    }
+
+    hr.progress-bar-line.end {
+        border-color: white;
+    }
+
+    .cart-status {
+        color: $primary;
+    }
+
+    div.active i {
+        background-color: #f0f8ff;
+    }
+}
+
+// .item-image {
+//     // height: 5.625em;    //Original
+//     // width: 5.625em;      //Original
+//     height: 7em;
+//     width: 7em;
+//     margin-right: 0.938em;
+//     flex-grow: 0;
+//     flex-shrink: 0;
+
+//     img.product-image {
+//         display: block;
+//         margin: 0 auto;
+//         max-width: 100%;
+//         height: auto;
+//         // max-height: 5.625em;     //Original
+//         max-height: 7em;
+//     }
+// }
+
+.line-item-name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1em;
+    color: $darker-gray;
+    font-weight: bold;
+    margin-bottom: $spacer;
+    width: 100%;
+}
+
+.product-edit {
+    margin-top: 0px;
+    a {
+        // font-size: 0.813em;
+        font-size: 18px;
+        margin-right: 40px;
+        color: black !important;
+    }
+}
+
+
+.product-info {
+        // padding: 1em 0.625em;
+        padding: 0.8em $spacer;
+        // margin-top: 10px;
+    .remove-btn {
+        color: $slightly-darker-gray;
+        font-size: 1.625em;
+        padding: 0;
+        position: absolute;
+        top: $negative-spacer;
+        right: 0.25rem;
+        border: none;
+        background-color: $white;
+
+        @include media-breakpoint-up(lg) {
+            top: 0;
+            bottom: 0;
+            right: $negative-spacer;
+            margin-top: $negative-spacer;
+            margin-bottom: $negative-spacer;
+        }
+    }
+
+    .remove-btn-lg {
+        // @include delete-card-button();
+        position: static;
+        padding: 0px !important;
+        font-size: 18px;
+    }
+}
+
+div.item-details.right {
+    width: 100%;
+
+    span.devider {
+        margin: 0px 5px;
+        font-weight: bold;
+        color: $primary;
+    }
+
+    div.item-name-edit-wishlist-remove {
+        padding-right: 15px;
+    }
+}
+
+div.product-card-footer {
+    margin: 10px 0px;
+
+    .line-item-price {
+        margin-right: 6em;
+    }
+
+    .line-item-availability {
+        margin-left: 10px;
+        flex-direction: column;
+    }
+
+    .line-item-total-price {
+        text-align: right;
+    }
+
+    .line-item-price-info {
+        margin-bottom: 0px;
+    }
+
+    .strike-through {
+
+    }
+}
+
+div.item-attributes {
+    margin-bottom: 25px;
+}
+
+a.continue-shopping-link {
+    font-weight: bold;
+}
+
+div.cart-page {
+    div.card {
+        border-color: $primary;
+        border-left-width: 4px;
+    }
+
+    div.product-details {
+        padding: 0px;
+        flex: 0 0 65.66667%;
+        max-width: 65.66667%;
+        hr.line-item-divider {
+            border-color: $primary;
+            margin: 0px;
+        }
+    }
+
+    .item-image {
+        // height: 5.625em;    //Original
+        // width: 5.625em;      //Original
+        height: 7em;
+        width: 7em;
+        margin-right: 0.938em;
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        img.product-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            // max-height: 5.625em;     //Original
+            max-height: 7em;
+        }
+    }
+}
+
+div.continue-shopping {
+    padding: 0px;
+}
+
+
+div.cart-page-heading {
+    padding: 0px;
+    margin-bottom: 25px;
+    h1 {
+        font-family: var(--skin-body-font) !important;
+        font-size: 30px;
+    }
+}
+
+form.promo-code-form {
+    border-bottom: 1px solid lightgray;
+}
+
+
+div.totals {
+    background-color: #F5F5F5;
+    height: fit-content;
+    flex: 0 0 32.33333%;
+    max-width: 32.33333%;
+    margin-left: 20px;
+    div.order-total {
+        border-top: 1px solid lightgray;
+        padding-top: 10px;
+
+        p.grand-total {
+            color: $primary;
+        }
+    }
+    & > div:first-child {
+        margin-top: 30px;
+    }
+
+    .tax-message {
+        font-size: 14px;
+        font-style:italic
+    }
+
+    .promo-code-submit button {
+        font-weight: bold;
+    }
+}
+
+

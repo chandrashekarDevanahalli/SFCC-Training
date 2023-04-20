@@ -1,0 +1,56 @@
+<center>
+    <h3 style="color:blue;"><img class="merkle-wallet-option"
+            src="${URLUtils.staticURL('/images/merkle_wallet.png')}" />
+    </h3>
+</center>
+
+<input type="hidden" class="form-control" name="${pdict.forms.billingForm.paymentMethod.htmlName}"
+    value="MERKLE_WALLET">
+
+<isset name="merkleWalletFields" value="${pdict.forms.billingForm.merkleWalletFields}" scope="page" />
+<div class="merkleWalletForm">
+    <!-- Name -->
+    <div class="row">
+        <!-- First Name -->
+        <div class="col-12">
+            <div class="form-group
+                    ${merkleWalletFields.firstName.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="firstName">
+                    <isprint value="${merkleWalletFields.firstName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="firstName" <isprint
+                    value="${merkleWalletFields.firstName.attributes}" encoding="off" />
+                autocomplete="given-name">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="col-12">
+            <div class="form-group
+                    ${merkleWalletFields.lastName.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="lastName">
+                    <isprint value="${merkleWalletFields.lastName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="lastName" <isprint
+                    value="${merkleWalletFields.lastName.attributes}" encoding="off" />
+                autocomplete="family-name">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="col-12">
+            <div class="form-group
+            ${merkleWalletFields.phone.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="phone">
+                    <isprint value="${merkleWalletFields.phone.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="phone" <isprint
+                    value="${merkleWalletFields.phone.attributes}" encoding="off" />
+                autocomplete="tel">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+{
+    "hooks": [
+        {
+            "name": "dw.ocapi.shop.customer.beforeGET",
+            "script": "./hooks/shop/customer"
+        },
+        {
+            "name": "dw.ocapi.shop.customer.modifyGETResponse",
+            "script": "./hooks/shop/customer"
+        },
+        {
+            "name": "dw.ocapi.shop.auth.modifyPOSTResponse",
+            "script": "./hooks/shop/auth"
+        },
+        {
+            "name": "dw.ocapi.shop.customer.payment_instrument.afterPOST",
+            "script": "./hooks/shop/customer/paymentInstrument"
+        },
+        {
+            "name": "dw.ocapi.shop.customer.payment_instrument.beforePOST",
+            "script": "./hooks/shop/customer/paymentInstrument"
+        },
+        {
+            "name": "dw.ocapi.shop.customer.payment_instrument.beforeDELETE",
+            "script": "./hooks/shop/customer/paymentInstrument"
+        },
+        {
+            "name": "dw.ocapi.shop.product.beforeGET",
+            "script": "./hooks/shop/product"
+        },
+        {
+            "name": "dw.ocapi.shop.product.modifyGETResponse",
+            "script": "./hooks/shop/product"
+        },
+        {
+            "name": "dw.ocapi.shop.basket.afterPOST",
+            "script": "./hooks/shop/basket"
+        },
+        {
+            "name": "dw.ocapi.shop.basket.shipment.beforePATCH",
+            "script": "./hooks/shop/basket/shipment"
+        },
+        {
+            "name": "dw.ocapi.shop.basket.customer.beforePUT",
+            "script": "./hooks/shop/basket/customer"
+        },
+        {
+            "name": "dw.ocapi.shop.basket.billing_address.beforePUT",
+            "script": "./hooks/shop/basket/billingAddress"
+        },
+        {
+            "name": "dw.ocapi.shop.basket.payment_instrument.afterPOST",
+            "script": "./hooks/shop/basket/paymentInstrument"
+        },
+        {
+            "name": "dw.ocapi.shop.basket.validateBasket",
+            "script": "./hooks/shop/basket"
+        },
+        {
+            "name": "dw.ocapi.shop.basket.modifyGETResponse",
+            "script": "./hooks/shop/basket"
+        },{
+            "name": "dw.ocapi.shop.basket.beforeGET",
+            "script": "./hooks/shop/basket"
+        },
+        {
+            "name": "dw.ocapi.shop.order.afterPOST",
+            "script": "./hooks/shop/order"
+        }
+    ]
+}

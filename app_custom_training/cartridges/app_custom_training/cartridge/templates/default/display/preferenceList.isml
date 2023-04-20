@@ -1,0 +1,27 @@
+<table border="2">
+    <tr>
+        <th>
+            <h1>Product ID</h1>
+        </th>
+        <th>
+            <h1>Product Name</h1>
+        </th>
+        <th>
+            <h1>Product Brand</h1>
+        </th>
+    </tr>
+    <isloop items="${pdict.List}" var="element">
+        <tr>
+            <td>
+                <h1>${element.ID}</h1>
+            </td>
+            <td>
+                <h1>${element.name}</h1>
+            </td>
+            <td>
+                <h1>${element.brand}</h1>
+            </td>
+
+        </tr>
+    </isloop>
+</table>

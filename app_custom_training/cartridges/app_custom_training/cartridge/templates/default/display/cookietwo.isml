@@ -1,0 +1,8 @@
+<isif condition="${pdict.product.getID()}">
+    <isredirect location="${URLUtils.url('Product-Show', 'pid', pdict.ProductsFromCookie)}" permanent="false">
+    <iselse/>
+        <isdecorate template="common/layout/page">
+            <isstatus value="404" />
+            <h1> No product with ID "${pdict.ProductsFromCookie}" </h1>
+        </isdecorate>
+</isif>

@@ -1,0 +1,6 @@
+<li class="nav-item merkleWallet-tab" data-method-id="${paymentOption.ID}">
+    <a class="nav-link merkle-wallet-content" data-toggle="tab" href="#merkle-wallet-content" role="tab">
+        <img class="merkle-wallet-option" src="${URLUtils.staticURL('/images/merkleWallet.png')}" height="35"
+            alt="${paymentOption.name}" title="${paymentOption.name}">
+    </a>
+</li>

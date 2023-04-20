@@ -1,0 +1,334 @@
+@import "../variables";
+@import "~base/product/detail";
+
+
+h1.product-name  {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+i.orange-star {
+    color: $orange;
+}
+i.gray-star {
+    color: $grey3;
+}
+span.rating-details {
+    color: black;
+    font-weight: bold;
+    font-size: 13px;
+    a {
+        color: black !important;
+        margin-left: 5px;
+    }
+}
+
+
+div.self-rating {
+    display: flex;
+    span.rating {
+        padding: 15px 18px;
+        border: 1px solid $aquasana;
+        border-radius: 50%;
+        color: $aquasana;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    span.text {
+        color: gray;
+        font-size: 13px;
+
+        b {
+            color: $grey5;
+        }
+    }
+
+}
+
+.product-specification {
+    font-weight: bold;
+}
+
+.fit-content {
+    width: fit-content;
+    // padding-right: 10px;
+    padding-left: 15px;
+}
+.no-padding {
+    padding: 0px;
+}
+
+div.product-id {
+    padding-right: 15px;
+    color: gray;
+}
+
+
+div.availability-message {
+    font-weight: bold;
+    color: $grey5;
+}
+
+button.color-attribute {
+    outline: none;
+}
+.product-detail .attributes .swatch-circle {
+    // $white will be replaced by color image background in ISML
+    // @include swatch(2.5em, $white);
+    border-radius: 0px;
+    width: 4em;
+    height: 4em;
+
+    &.color-value.selected::after {
+        left: 34%;
+        top: 34%;
+    }
+}
+
+div.product-variation-section {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 20px;
+    position: relative;
+    .size-chart {
+        position: absolute;
+        left: 85%;
+        bottom: 2em;
+    }
+}
+
+div.attributes {
+    padding: 0px;
+
+    div.prices {
+        // margin: 20px 0px;
+        margin-top: 20px;
+        background-color: #dff3f5;
+        padding: 15px;
+
+        div.sale-price-value {
+            margin-left: 20px;
+            text-align: start;
+            span.text {
+                font-weight: bold;
+                color: $blue;
+            }
+            span.msrp {
+                color: $grey4;
+            }
+            .strike-through {
+                margin-right: 0.5rem;
+            }
+
+        }
+
+        div.radio-button {
+            input {
+                height: 20px;
+                width: 20px;
+                // color: black;
+                // vertical-align: middle;
+                accent-color: $black;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        div.price {
+            color: $grey5;
+            margin-right: 5px;
+        }
+    }
+}
+
+div.water-for-life {
+    position: relative;
+    div.water-life-price {
+        margin-top: 0px !important;
+        background-color: $white !important;
+
+        span.text {
+            // color: #43a3af !important;
+            color: $aquasana !important;
+        }
+
+        span.value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        i {
+            color: gray;
+        }
+        span.promo-text {
+            color: gray;
+            // margin-left: 5px;
+        }
+
+        span.strike-through {
+            display: none;
+        }
+    }
+
+    div.purchase-water-for-life {
+        position: absolute;
+        width: 8.5em;
+        font-weight: bold;
+        color: $blue;
+        text-align: center;
+        right: -27%;
+        top: 0%;
+
+        div {
+            position: relative;
+            border: 1px solid;
+            padding: 5px 10px;
+            font-size: 11px;
+            i {
+                position: absolute;
+                font-size: 25px;
+                top: 30%;
+                left: -7%;
+            }
+        }
+
+    }
+
+}
+
+
+select.quantity-select {
+    width: 60px;
+    margin-left: 10px;
+}
+
+
+button.add-to-wish-list {
+    border: none;
+    background-color: $white;
+    color: $grey5;
+    &:hover {
+        font-weight: bold;
+    }
+}
+
+.add-to-cart {
+    // height: 50px;
+    padding: 1rem 0.75rem;
+    font-weight: bold;
+    background-color: $blue !important;
+}
+
+div.promotions {
+    div {
+        color: $blue !important;
+        font-weight: bold;
+    }
+}
+
+div.aquasana-content {
+    // background-color: $grey2;
+    background-color: #f9f9f9;
+    justify-content: space-evenly;
+    padding: 20px 0px;
+
+    span {
+        font-weight: 500;
+        color: $grey5;
+    }
+}
+
+.breadcrumb a {
+    font-size: 13px;
+}
+
+.breadcrumb a,
+.breadcrumb span,
+.description .value.content,
+span.availability,
+label.size,
+span.color,
+div.quantity label {
+    color: $gray !important;
+}
+
+b {
+    color: $grey5;
+}
+
+
+.mg-top-15 {
+    margin-top: 15px;
+}
+.mg-bottom-15 {
+    margin-bottom: 15px;
+}
+.mg-15 {
+    margin: 15px;
+}
+.mg-tb-15 {
+    margin: 15px 0px;
+}
+
+
+
+div.alternate-image-section {
+    div.alternate-image-tile {
+        width: 6em;
+        height: 6em;
+        border: 1px solid gray;
+        margin: 5px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .mainImage {
+        border: 3px solid !important;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    button {
+        color: $grey5;
+        border: 2px solid $grey5;
+        margin: 5px;
+        background-color: $white;
+        outline: none;
+    }
+
+    button.left-arrow {
+        opacity: 0.4;
+    }
+
+}
+
+div.water-for-life-eligible {
+    width: 70px;
+    background-color: $aquasana;
+    position: absolute;
+    top: 0%;
+    right: 3%;
+    color: white;
+    padding-top: 10px;
+
+    img {
+        width: 80%;
+        height: auto;
+    }
+    div.text {
+        font-size: 14px;
+    }
+
+    p.eligible {
+        background-color: $blue;
+        margin: 0px;
+        padding: 1px 0px;
+    }
+
+}
+

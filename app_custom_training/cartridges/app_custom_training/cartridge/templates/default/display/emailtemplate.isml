@@ -1,0 +1,13 @@
+<h1>
+    Dear , ${pdict.customerInfo.firstName} ${pdict.customerInfo.lastName} <br>
+    Your cart contains below Items. Please visit <a href="${URLUtils.http('Cart-Show')}">Shopping Bag</a> to checkout.
+</h1>
+
+<isloop items="${pdict.productArrayList}" var="ele" status="loopstatus">
+    <h1>${ele.productName}<a href="${URLUtils.http('Product-Show', 'pid', ele.productID)}"> Order Here</a><br></h1>
+</isloop>
+
+<h1>
+    Thanks,
+    RefArch Team
+</h1>

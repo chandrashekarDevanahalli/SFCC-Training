@@ -1,0 +1,11 @@
+<td>
+    <h1>${pdict.product.ID}</h1>
+</td>
+<td>
+    <h1>${pdict.product.name}</h1>
+</td>
+<td>
+    <h1>${pdict.product.brand}</h1>
+</td>
+
+${pdict.product}

@@ -1,0 +1,90 @@
+{
+	"step-types":{
+	   "script-module-step":[
+		  {
+			 "@type-id":"custom.removePaypalCustomObject",
+			 "@supports-parallel-execution":"false",
+			 "@supports-site-context":"true",
+			 "@supports-organization-context":"false",
+			 "description":"Remove PaypalNew Transaction custom object when creation date is more than a year",
+			 "module":"bm_paypal/cartridge/scripts/transactionRemove.js",
+			 "function":"execute",
+			 "transactional":"true",
+			 "timeout-in-seconds":"900",
+			 "parameters":{},
+			 "status-codes":{
+				"status":[
+				   {
+					  "@code":"ERROR",
+					  "description":"An error occurs, please re-run the job or contact PayPal"
+				   },
+				   {
+					  "@code":"FINISHED",
+					  "description":"Outdated custom PayPal transaction were removed"
+				   }
+				]
+			 }
+		  }
+	   ],
+        "chunk-script-module-step": [
+            {
+                "@type-id": "custom.MergeAccountsPayPalAndSingleAuthentication",
+                "@supports-parallel-execution": "false",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "Merge user accounts created via PayPal and Single Authentication. Remove accounts created by PayPal",
+                "module": "bm_paypal/cartridge/scripts/steps/mergeAccountsPayPalAndSingleAuth.js",
+                "before-step-function": "beforeStep",
+                "total-count-function": "getTotalCount",
+                "read-function": "read",
+                "process-function": "process",
+                "write-function": "write",
+                "after-step-function": "afterStep",
+                "chunk-size": 100,
+                "transactional": "false",
+                "parameters": {
+                    "parameter": [
+                        {
+                            "@name": "Delay",
+                            "@type": "long",
+                            "@required": "true",
+                            "@trim": "true",
+                            "default-value": "500",
+                            "description": "Delay (in milliseconds) after each request to remove customer. Possible range is between 100 and 5000.",
+                            "min-value": "100",
+                            "max-value": "5000"
+                        },
+                        {
+                            "@name": "ServiceName",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "default-value": "int_paypal.http.remove.customer",
+                            "description": "The name of service which will be used to send requests to remove the customer."
+                        },
+                        {
+                            "@name": "FileReportPath",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "default-value": "IMPEX/src/jobMergeAccounts/merged-user-accounts-{DateTime}.csv",
+                            "description": "Path to the report csv file."
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when the step finished successfully."
+                        }
+                    ]
+                }
+            }
+        ]
+	}
+ }

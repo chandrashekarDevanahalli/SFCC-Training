@@ -1,0 +1,60 @@
+<isdecorate template="common/layout/page">
+    <table border="2">
+        <tr>
+            <h1>
+                <th>OrderNo</th>
+
+                <th>Billing First Name</th>
+
+                <th>Billing Last Name</th>
+
+                <th>Sub Total</th>
+
+                <th>Tax</th>
+
+                <th>Shipping Cost</th>
+
+                <th>Order Total</th>
+            </h1>
+        </tr>
+        <isloop items="${pdict.data}" var="ele" status="loopstatus">
+            <tr>
+                <td>
+                    <h1>
+                        <isprint value="${ele.orderNo}" />
+                    </h1>
+                </td>
+                <td>
+                    <h1>
+                        <isprint value="${ele.orderBillingFirstName}" />
+                    </h1>
+                </td>
+                <td>
+                    <h1>
+                        <isprint value="${ele.orderBillingLastName}" />
+                    </h1>
+                </td>
+                <td>
+                    <h1>
+                        <isprint value="${ele.orderSubtotal}" />
+                    </h1>
+                </td>
+                <td>
+                    <h1>
+                        <isprint value="${ele.orderTax}" />
+                    </h1>
+                </td>
+                <td>
+                    <h1>
+                        <isprint value="${ele.orderShippingCost}" />
+                    </h1>
+                </td>
+                <td>
+                    <h1>
+                        <isprint value="${ele.orderTotal}" />
+                    </h1>
+                </td>
+            </tr>
+        </isloop>
+    </table>
+</isdecorate>

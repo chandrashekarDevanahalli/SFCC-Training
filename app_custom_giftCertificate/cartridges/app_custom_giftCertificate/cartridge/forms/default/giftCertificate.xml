@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+    <!-- YourName-->
+    <field formid="yourName" label="label.input.your.name" type="string" mandatory="true" binding="yourName" max-length="40" missing-error="address.firstname.missing" range-error="error.message.50orless"/>
+
+    <!-- FriendsName -->
+    <field formid="friendsName" label="label.input.friends.name" type="string" mandatory="true" binding="friendsName" max-length="50" missing-error="address.lastname.missing" range-error="error.message.50orless"/>
+
+    <!--Friends Email -->
+    <field formid="friendsEmail" label="label.input.friends.email" mandatory="true" max-length="50" missing-error="error.message.required" parse-error="error.message.parse.email.profile.form" range-error="error.message.50orless" regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" value-error="ValueErrorText" type="string" />
+
+    <!--Valid Email-->
+    <field formid="validEmail" label="label.input.valid.email" mandatory="true" max-length="50" missing-error="error.message.required" parse-error="error.message.parse.email.profile.form" range-error="error.message.50orless" regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" value-error="ValueErrorText" type="string" />
+
+    <!--Amount-->
+    <field formid="amount" label="label.input.amount.giftCertificate" mandatory="true" max-length="10" missing-error="error.message.required" type="number"/>
+
+</form>

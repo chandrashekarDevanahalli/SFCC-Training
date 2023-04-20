@@ -1,0 +1,15 @@
+<ismodule template="/display/myTag"
+name="live"
+attribute="product" />
+<table border = "2">
+     <tr>
+       <th><h1>Product ID</h1></th>
+       <th><h1>Product Name</h1></th>
+       <th><h1>Product Brand</h1></th>
+     </tr>
+      <isloop items="${pdict.List}" var="element" >
+        <tr>
+       <islive product = "${element}" />
+        </tr>
+     </isloop>
+</table>

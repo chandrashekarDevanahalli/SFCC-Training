@@ -1,0 +1,21 @@
+<div class="row d-flex justify-content-between">
+    <!-- Availability -->
+    <div class="availability product-availability d-flex" data-ready-to-order="${product.readyToOrder}" data-available="${product.available}">
+        <isinclude template="product/components/availability" />
+    </div>
+
+    <!-- Product ID -->
+    <div class="product-id availability">
+        <span class="product-id">${product.id}</span>
+    </div>
+</div>
+
+<br>
+
+<isif condition="${!isQuickView}">
+    <!-- In store inventory -->
+    <div class="pdp-in-store-inventory d-none">
+        <isinclude template="product/components/pdpInstoreInventory" />
+    </div>
+</isif>
+

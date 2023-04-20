@@ -1,0 +1,29 @@
+<isdecorate template="common/layout/page">
+    <table border="2">
+        <tr>
+            <th>
+                <h1>Product ID</h1>
+            </th>
+            <th>
+                <h1>Product Name</h1>
+            </th>
+            <th>
+                <h1>Product Brand</h1>
+            </th>
+        </tr>
+        <h1>Available products</h1>
+        <isloop items="${pdict.productDetails}" var="element">
+            <tr>
+                <td>
+                    <h1>${element.ID()}</h1>
+                </td>
+                <td>
+                    <h1>${element.getName()}</h1>
+                </td>
+                <td>
+                    <h1>${element.getBrand()}</h1>
+                </td>
+            </tr>
+        </isloop>
+    </table>
+</isdecorate>

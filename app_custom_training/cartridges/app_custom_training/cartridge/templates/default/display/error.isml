@@ -1,0 +1,5 @@
+<isdecorate template="common/layout/page">
+    <isstatus value="404" />
+    <isset name="element" value="${element}" scope="page" />
+    
+</isdecorate>

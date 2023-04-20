@@ -1,0 +1,88 @@
+<isset name="miniCart" value="${true}" scope="page" />
+<div class="container cart">
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+    <div>
+        <div class="row">
+            <div class="col-6 d-flex align-items-end">
+                <h1>
+                    ${Resource.msg('title.your.shopping.cart','cart',null)}
+                    (<isprint value="${pdict.items.length}" formatter="##" />)
+                </h1>
+            </div>
+            <div class="col-6 text-right">
+                <a class="normal" href="${URLUtils.https('Cart-Show')}" title="${Resource.msg('link.view.cart','cart',null)}">
+                    ${Resource.msg('link.view.cart','cart',null)}
+                </a>
+            </div>
+        </div>
+        <div class="minicart-error cart-error">
+            <isif condition="${pdict.valid.error && pdict.items.length !== 0}">
+                <div class="alert alert-danger alert-dismissible valid-cart-error fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    ${pdict.valid.message}
+                </div>
+            </isif>
+        </div>
+        <div class="product-summary">
+            <isloop items="${pdict.items}" var="lineItem">
+                <div class="row">
+                    <div class="col-12">
+                        <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
+                            <div class="top-border ${miniCart ? 'bonus-product-line-item' : ''} uuid-${lineItem.UUID}">
+                                <div class="card-body">
+                                    <isinclude template="checkout/productCard/bonusProductCard" />
+                                </div>
+                            </div>
+                        <iselse/>
+                            <div class="top-border uuid-${lineItem.UUID}">
+                                <div class="card-body">
+                                    <isif condition="${lineItem.noProduct === true}">
+                                        <isinclude template="checkout/productCard/uncategorizedProductCard" />
+                                    <iselse/>
+                                        <isinclude template="checkout/productCard/productCard" />
+                                    </isif>
+                                </div>
+                            </div>
+                        </isif>
+                    </div>
+                </div>
+            </isloop>
+        </div>
+    </div>
+
+    <isinclude template="cart/cartRemoveProductModal"/>
+
+    <div class="minicart-footer">
+        <div class="row estimated-total">
+            <div class="col-8">
+                <p class="sub-total-label">${Resource.msg('label.estimatedtotal','cart',null)}</p>
+            </div>
+            <div class="col-4">
+                <p class="text-right sub-total">${pdict.totals.subTotal}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 checkout-continue">
+                <isinclude template="cart/checkoutButtons" />
+            </div>
+        </div>
+        <div class="minicart-account-links">
+            <div class="col-11 d-flex water-for-life-subscription">
+                <div class="img">
+                    <img src="${URLUtils.staticURL('images/water-for-life.png')}" alt="Water For Life">
+                </div>
+                <div class="text">
+                    ${Resource.msg('water.for.life.subscription','cart',null)}
+                </div>
+            </div>
+            <p>
+                Please <a href="${URLUtils.url('Login-Show')}" class="minicart-login-link">${Resource.msg('action.customer.login','checkout',null)}</a> or 
+                <a href="${URLUtils.url('Login-Show')}" class="minicart-login-link">${Resource.msg('action.customer.create.account','cart',null)}</a> to continue checkout.
+            </p>
+        </div>
+    </div>
+</div>

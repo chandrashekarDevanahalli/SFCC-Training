@@ -1,0 +1,32 @@
+{
+    "paypalRestServicePath": "../../cartridges/int_paypal/cartridge/scripts/service/paypalRestService",
+    "paypalHelperPath" : "../../cartridges/int_paypal/cartridge/scripts/paypal/helpers/paypalHelper",
+    "paymentInstrumentHelperPath" : "../../cartridges/int_paypal/cartridge/scripts/paypal/helpers/paymentInstrumentHelper",
+    "paypalUtilsPath" : "../../cartridges/int_paypal/cartridge/scripts/paypal/paypalUtils",
+    "addressHelperPath" : "../../cartridges/int_paypal/cartridge/scripts/paypal/helpers/addressHelper",
+    "billingAgreementHelperPath" : "../../cartridges/int_paypal/cartridge/scripts/paypal/helpers/billingAgreementHelper",
+    "billingAgreementModelPath" : "../../cartridges/int_paypal/cartridge/models/billingAgreement",
+    "paypalConstantsPath" : "../../cartridges/int_paypal/cartridge/scripts/util/paypalConstants",
+    "bm_paypalConstantsPath" : "../../cartridges/bm_paypal/cartridge/scripts/util/paypalConstants.js",
+    "transactionRemovePath" : "../../cartridges/bm_paypal/cartridge/scripts/transactionRemove.js",
+    "bmPaypalUtilsPath" : "../../cartridges/bm_paypal/cartridge/scripts/paypal/bmPaypalUtils.js",
+    "sdkConfigPath" : "../../cartridges/int_paypal/cartridge/config/sdkConfig.js",
+    "creditMessageConfigPath" : "../../cartridges/paypal_credit_messaging/cartridge/config/creditMessageConfig.js",
+    "responseHelperPath" : "../../cartridges/bm_paypal/cartridge/scripts/paypal/responseHelper.js",
+    "paypalCreditFinancingOptionsHelperPath" : "../../cartridges/paypal_credit_financing_options/cartridge/scripts/paypalCreditFinancingOptionsHelper.js",
+    "financialApiPath" : "../../cartridges/paypal_credit_financing_options/cartridge/scripts/financialApi.js",
+    "financialPreferencesPath" : "../../cartridges/paypal_credit_financing_options/cartridge/config/financialPreferences.js",
+    "ppOrdersPagingPath" : "../../cartridges/bm_paypal/cartridge/models/ppOrdersPaging.js",
+    "ppOrderPath" : "../../cartridges/bm_paypal/cartridge/models/ppOrder.js", 
+    "ppTransactionMgrPath" : "../../cartridges/bm_paypal/cartridge/models/ppTransactionMgr.js",
+    "authorizationAndCaptureWhHelperPath" : "../../cartridges/int_paypal/cartridge/scripts/paypal/helpers/authorizationAndCaptureWhHelper.js",
+    "postAuthorizationHandlingPath" : "../../cartridges/int_paypal/cartridge/scripts/hooks/postAuthorizationHandling.js",
+    "ppTransactionActionsPath" : "../../cartridges/bm_paypal/cartridge/models/ppTransactionActions.js",
+    "ppTransactionPath" : "../../cartridges/bm_paypal/cartridge/models/ppTransaction.js",
+    "bmPaymentInstrumentHelperPath" : "../../cartridges/bm_paypal/cartridge/scripts/paypal/bmPaymentInstrumentHelper.js",
+    "enableFundingHelperPath" : "../../cartridges/paypal_credit_messaging/cartridge/scripts/helpers/enableFundingHelper.js",
+    "processorPath" : "../../cartridges/int_paypal/cartridge/scripts/paypal/processor.js",
+    "bmPaypalApiPath" : "../../cartridges/bm_paypal/cartridge/scripts/paypal/paypalApi/bmPaypalApi.js"
+    
+    
+}

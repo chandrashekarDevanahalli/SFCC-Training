@@ -1,0 +1,51 @@
+<div class="primary-images col-12 col-sm-6">
+    <div id="pdpCarousel-${product.id}" class="carousel slide" data-interval="0"
+        data-prev="${Resource.msg('button.previous', 'common', null)}"
+        data-next="${Resource.msg('button.next', 'common', null)}">
+        <isif condition="${product.images['large'].length > 1}">
+            <ol class="carousel-indicators d-none" aria-hidden="true">
+                <isloop items="${product.images['large']}" var="image" status="loopStatus">
+                    <li data-target="${" #"}pdpCarousel-${product.id}" data-slide-to="${loopStatus.index}"
+                        class='<isif condition="${loopStatus.index == 0}">active</isif>'>
+                    </li>
+                </isloop>
+            </ol>
+        </isif>
+
+        <div class="carousel-inner" role="listbox">
+            <isloop items="${product.images['large']}" var="image" status="loopStatus">
+                <div class='carousel-item <isif condition="${loopStatus.index == 0}">active</isif>'>
+                    <img src="${image.url}" class="d-block img-fluid" alt="${image.alt} image number ${image.index}"
+                        itemprop="image" />
+                </div>
+            </isloop>
+        </div>
+        <isif condition="${product.images['large'].length > 1}">
+            <a class="carousel-control-prev d-none" href="${" #"}pdpCarousel-${product.id}" role="button"
+                data-slide="prev">
+                <span class="fa icon-prev" aria-hidden="true"></span>
+                <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+            </a>
+            <a class="carousel-control-next d-none" href="${" #"}pdpCarousel-${product.id}" role="button"
+                data-slide="next">
+                <span class="fa icon-next" aria-hidden="true"></span>
+                <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+            </a>
+        </isif>
+    </div>
+
+    <!-- Product Alternate Images -->
+    <isinclude template="product/components/alternateImages" />
+
+    <!-- Water For Life Eligible -->
+    <div class="water-for-life-eligible text-center">
+        <div class="icon">
+            <img src="${URLUtils.staticURL('images/water-for-life-white.png')}" alt=" Water For Life Icon">
+        </div>
+        <div class="text">
+            <span class="wfl">${Resource.msg('water.for.life.text', 'product', null)}</span>
+            <p class="eligible">${Resource.msg('eligible', 'product', null)}</p>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,268 @@
+<isdecorate template="common/layout/page">
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/productDetail.js');
+        assets.addCss('/css/product/detail.css');
+    </isscript>
+
+    <isset name="product" value="${pdict.product}" scope="page" />
+    <isset name="isQuickView" value="${false}" scope="page" />
+    <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
+    <isobject object="${product.raw}" view="detail" />
+    <div class="container product-detail product-wrapper" data-pid="${product.id}">
+
+        <div clas="row">
+            <div class="col-12">
+                <!--Breadcrumbs-->
+                <div class="row">
+                    <div class="product-breadcrumb col hidden-sm-down">
+                        <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!--Breadcrumbs-->
+                <div class="product-breadcrumb d-md-none">
+                    <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+                </div>
+                <!-- Product Name -->
+                <div class="row">
+                    <div class="d-md-none col-sm-12">
+                        <h1 class="product-name">${product.productName}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Product Images Carousel -->
+            <isinclude template="product/components/imageCarousel" />
+            <div class="col-12 col-sm-6">
+
+
+                <!-- Product Name -->
+                <div class="row">
+                    <div class="col">
+                        <h1 class="product-name hidden-sm-down">${product.productName}</h1>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <isinclude template="product/components/pidRating" />
+                    </div>
+                </div>
+
+                <div class="c-row">
+                    <h3 class="col-sm-12 col-md-12 col-lg-12 value content pdp-short-description"
+                        id="collapsible-description-1">
+                        Combines Claryum® and reverse osmosis technology to remove 88 contaminants including fluoride
+                        and arsenic.
+                    </h3>
+                </div>
+
+                <div class="attributes">
+
+                    <div class="product-specification"><a href="#" class="product-specification-link" title="">See
+                            Product Specifications</a></div>
+
+                    <div class="c-row">
+                        <div class="col-3 col-sm-2 pdp-percentage-img">
+                            <div class="asset-content background-white">
+                                <div class="circle-with-text">
+                                    <div class="circle">
+                                        <div class="circle-text">5X</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-9 col-sm-9 pdp-percentage-text">
+                            TESTED &amp; PROVEN TO REMOVE <span class="text-bold"><b>5X MORE</b> </span> CONTAMINANTS
+                            THAN OTHER
+                            RO SYSTEMS
+                        </div>
+                    </div>
+
+                    <!-- Attributes and Quantity -->
+                    <isinclude template="product/components/mainAttributes" />
+
+                    <!-- Product Availability -->
+                    <isinclude template="product/components/productAvailability" />
+
+
+                    <isset name="isBundle" value="${false}" scope="page" />
+                    <isset name="loopState" value="${{
+                                                   count: 1}}" scope="page" />
+                    <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                        <div class="row" data-attr="${attr.id}">
+                            <div class="col-8">
+                                <isinclude template="product/components/variationAttribute" />
+                            </div>
+
+                        </div>
+                    </isloop>
+
+
+                    <isif condition="${!product.variationAttributes}">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="simple-quantity">
+                                    <isinclude template="product/components/quantity" />
+                                </div>
+                            </div>
+                        </div>
+                    </isif>
+
+                    <div class="product-options">
+                        <isif condition="${product.options && product.options.length > 0}">
+                            <isinclude template="product/components/options" />
+                        </isif>
+                    </div>
+
+                    <!-- Size Chart -->
+                    <isif condition="${product.variationAttributes && product.sizeChartId}">
+                        <div class="row">
+                            <div class="size-chart col-12">
+                                <isinclude template="product/components/sizeChart" />
+                            </div>
+                        </div>
+                    </isif>
+
+
+
+
+                    <!-- Applicable Promotions -->
+                    <div class="row">
+                        <div class="col-12 promotions">
+                            <isinclude template="product/components/promotions" />
+                        </div>
+                    </div>
+
+                    <div class="prices-add-to-cart-actions">
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Prices -->
+                                <div class="pricesin">
+                                    <isset name="price" value="${product.price}" scope="page" />
+                                    <isinclude template="product/components/pricing/main" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="prices d-flex align-items-center">
+                            <div class="radio-button"><input type="radio" name="sale-price" value=""  
+                                    checked="checked"></div>
+                            <div class="sale-price-value"><span class="text">${Resource.msg('sale.price', 'product', null)}</span>
+                                <div class="d-flex align-items-center">
+                                    <isset name="price" value="${product.price}" scope="page" />
+                                    <isinclude template="product/components/pricing/main" /><span
+                                        class="msrp">MSRP</span></div>
+                            </div>
+                        </div>
+
+                        <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                            <div class="row" data-attr="${attr.id}">
+                                <isif condition="${attributeStatus.last && !isBundle}">
+                                    <!-- Quantity Drop Down Menu -->
+                                    <div class="attribute quantity col-4">
+                                        <isinclude template="product/components/quantity" />
+                                    </div>
+                                </isif>
+                            </div>
+                        </isloop>
+
+
+
+                        <div class="prices-add-to-cart-actions">
+                            <!-- Cart and [Optionally] Apple Pay -->
+                            <isinclude template="product/components/addToCartProduct" />
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <isif condition=${!!!isQuickView}>
+                                    <isinclude template="wishlist/components/addToWishListButton" />
+                                </isif>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col wishlist-col">
+                                <button type="submit" class="add-to-wish-list"
+                                    data-href="/on/demandware.store/Sites-aquasana-Site/default/Wishlist-AddProduct">
+                                    <i class="fa fa-heart-o pdp-wishlist-icon" aria-hidden="true"></i> <span>Add to
+                                        Wishlist</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col text-center">
+                                <span class="pdp-promotion-line g-tooltip-icon">50% OFF REVERSE OSMOSIS SYSTEMS
+                                    <span class="tool-tip-content">Limited Time Only!</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Social Sharing Icons -->
+                        <div class="row">
+                            <isinclude template="product/components/socialIcons" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <isslot id="cts-recommendations-m" description="Complete the set products" context="global"
+                    context-object="${pdict.product.raw}" />
+            </div>
+
+            <isset name="loopState" value="${{
+                                           count: 1}}" scope="page" />
+            <isinclude template="product/components/descriptionAndDetails" />
+
+            <div class="recommendations">
+                <isslot id="product-recommendations-m" description="Recommended products" context="global"
+                    context-object="${pdict.product.raw}" />
+            </div>
+
+        </div>
+        <div class="benefit-banner d-none d-sm-block">
+            <div class="inner-container">
+                <div class="banner-row">
+                    <div class="benefit-banner-col my-auto">
+                        <img class="cate-img js-lazyloaded"
+                            data-src="https://www.aquasana.com/on/demandware.static/-/Sites-aquasana-Library/default/dwe890a54a/images/pdp/eco-friendly/AQ_Icons_MaxContRemoval.svg"
+                            alt="tree image"
+                            src="https://www.aquasana.com/on/demandware.static/-/Sites-aquasana-Library/default/dwe890a54a/images/pdp/eco-friendly/AQ_Icons_MaxContRemoval.svg">
+                        <span class="cate-options">MAX CONTAMINANT REMOVAL</span>
+                    </div>
+                    <div class="benefit-banner-col my-auto">
+                        <img class="cate-img js-lazyloaded"
+                            data-src="https://www.aquasana.com/on/demandware.static/-/Sites-aquasana-Library/default/dw7541643b/images/pdp/eco-friendly/AQ_Icons_TestedCertified.svg"
+                            alt="glass image"
+                            src="https://www.aquasana.com/on/demandware.static/-/Sites-aquasana-Library/default/dw7541643b/images/pdp/eco-friendly/AQ_Icons_TestedCertified.svg">
+                        <span class="cate-options">TESTED &amp; CERTIFIED</span>
+                    </div>
+                    <div class="benefit-banner-col my-auto">
+                        <img class="cate-img js-lazyloaded"
+                            data-src="https://www.aquasana.com/on/demandware.static/-/Sites-aquasana-Library/default/dwef5bc558/images/pdp/eco-friendly/AQ_Icons_ByeFluoride.svg"
+                            alt="filter image"
+                            src="https://www.aquasana.com/on/demandware.static/-/Sites-aquasana-Library/default/dwef5bc558/images/pdp/eco-friendly/AQ_Icons_ByeFluoride.svg">
+                        <span class="cate-options">GOODBYE, FLUORIDE</span>
+                    </div>
+                    <div class="benefit-banner-col my-auto">
+                        <img class="cate-img js-lazyloaded"
+                            data-src="https://www.aquasana.com/on/demandware.static/-/Sites-aquasana-Library/default/dw025f4101/images/pdp/eco-friendly/AQ_Icons_EasyFilterReplace.svg"
+                            alt="cooking image"
+                            src="https://www.aquasana.com/on/demandware.static/-/Sites-aquasana-Library/default/dw025f4101/images/pdp/eco-friendly/AQ_Icons_EasyFilterReplace.svg">
+                        <span class="cate-options">EASY REPLACEMENTS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </isobject>
+</isdecorate>

@@ -1,0 +1,102 @@
+<style>
+    .form-group.required ::before {
+
+        content: "*";
+
+        color: #e71b1b;
+
+    }
+</style>
+
+<isdecorate template="common/layout/page">
+
+    <isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addJS('*/js/donationForm.js');
+    </isscript>
+
+    <h1>
+        <center>
+            <h3 style="color:blue;"><img class="donationform" src="${URLUtils.staticURL('/images/Donatetoday.png')}" />
+                <img class="donationform" src="${URLUtils.staticURL('/images/make a difference.png')}" />
+            </h3>
+
+        </center>
+    </h1>
+    <form class="form-donation" action="${URLUtils.url('Donation-Result')}" method="post">
+
+
+        <iscomment>
+            FirstName
+        </iscomment>
+        <div class="col-6">
+            <div class="form-group
+        <isif condition=" ${pdict.donationForm.firstName.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="donation-firstName">
+                    <isprint value="${pdict.donationForm.firstName.label}" />
+                </label>
+                <input type="text" class="form-control" id="donation-firstName" <isprint
+                    value="${pdict.donationForm.firstName.attributes}" encoding="off" />>
+                <div class="invalid-feedback" id="form-fname-error">
+                    <isprint value="${pdict.donationForm.firstName.error}" />
+                </div>
+            </div>
+        </div>
+
+        <iscomment>
+            LastName
+        </iscomment>
+        <div class="col-6">
+            <div class="form-group
+        <isif condition=" ${pdict.donationForm.lastName.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="donation-lastName">
+                    <isprint value="${pdict.donationForm.lastName.label}" />
+                </label>
+                <input type="text" class="form-control ${pdict.donationForm.lastName.valid ? "" : " is - invalid "}"
+                    id="donation-lastName" <isprint value=${pdict.donationForm.lastName.attributes} encoding="off" />>
+                <div class="invalid-feedback" id="form-lname-error">
+                    <isprint value="${pdict.donationForm.lastName.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+
+        <iscomment>
+            EmailID
+        </iscomment>
+        <div class="col-6">
+            <div class="form-group 
+        <isif condition=" ${pdict.donationForm.email.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="donation-email">
+                    <isprint value="${pdict.donationForm.email.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control ${pdict.donationForm.email.valid ? "" : " is-invalid"}"
+                    id="donation-email" <isprint value=${pdict.donationForm.email.attributes} encoding="off" />>
+                <div class="invalid-feedback" id="form-email-error">
+                    <isprint value="${pdict.donationForm.email.error}" encoding="off" />
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Amount-->
+
+
+        <div class="col-6">
+            <div class="form-group 
+        <isif condition=" ${pdict.donationForm.amount.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="donation-amount">
+                    <isprint value="${pdict.donationForm.amount.label}" />
+                </label>
+                <input type="text" class="form-control ${pdict.donationForm.amount.valid ? "" : " is-invalid"}"
+                    id="donation-amount" <isprint value=${pdict.donationForm.amount.attributes} encoding="off" />>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Button-->
+        <button type="submit" class="add-to-cart-donate btn btn-block btn-primary">
+            ${Resource.msg('button.donation.amount', 'forms', null)}
+        </button>
+
+    </form>
+</isdecorate>

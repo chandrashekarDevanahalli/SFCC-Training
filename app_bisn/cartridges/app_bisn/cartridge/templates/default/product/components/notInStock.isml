@@ -1,0 +1,27 @@
+<form class="email-form-submit" action="${URLUtils.url('OutOfStockNotifyMe-Save')}" method="get">
+
+    <div id="not-in-stock" <isif condition="${product.available}">class ="d-none"</isif>>
+
+        <div class="form-group
+        <isif condition=" ${pdict.notifyMeForm.email.mandatory === true}">required</isif>">
+            <label class="form-control-label" for="notify-me">
+                <isprint value="${pdict.notifyMeForm.email.label}" encoding="htmlcontent" />
+            </label>
+            <input type="text" class="form-control ${pdict.notifyMeForm.email.valid ? "" : " is - invalid "}"
+                id="notify-me" placeholder="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}"
+                aria-label="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}" <isprint
+                value=${pdict.notifyMeForm.email.attributes} encoding="off" />>
+            <div class="invalid-feedback" id="form-email-error">
+                <isprint value="${pdict.notifyMeForm.email.error}" encoding="off" />
+            </div>
+        </div>
+
+        <div>
+            <button class="notify-me-btn btn-primary" type="submit">
+                <h3>
+                    <isprint value="${Resource.msg('button.notify.me', 'forms', null)}" />
+                </h3>
+            </button>
+        </div>
+    </div>
+</form>
